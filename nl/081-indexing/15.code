@@ -1,0 +1,3 @@
+s = "Bernoulli"
+lop = length(s)/2
+print(s[lop])

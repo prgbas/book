@@ -1,0 +1,7 @@
+s1 = "Hlo ol"
+s2 = "el,wrd"
+i = 0
+while(i < 6)
+   print(s1[i])
+   print(s2[i])
+   i = i + 1

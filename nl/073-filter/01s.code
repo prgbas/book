@@ -1,0 +1,7 @@
+getal = 1
+for(i = 0; i < 14; i++)
+   if(getal % 3 == 0)
+        print("*")
+   else
+        print(getal)
+   getal = getal + 1

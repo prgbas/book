@@ -1,0 +1,306 @@
+\documentclass[b5paper,openright,twoside]{report}
+
+\usepackage[dutch]{babel}
+\usepackage[paperwidth=17cm,paperheight=24cm,top=2cm,bottom=2.5cm,outer=2cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{microtype}
+
+\usepackage{listliketab}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{fancyvrb}
+\usepackage{subcaption}
+
+\usepackage{mathpazo}
+\usepackage{amsmath}
+
+\usepackage{import}
+
+\usepackage{xsim}
+\xsimsetup{path = _generated, solution/template = per-chapter-heading}
+\usepackage{tasks}
+
+\usepackage{tikz}
+\usepackage{tkz-graph}
+\usetikzlibrary{arrows}
+\usetikzlibrary{tikzmark}
+
+\usepackage{cancel}
+\usepackage{upquote}
+\usepackage{multirow}
+\usepackage{jvlisting}
+
+%
+% basic typography setup
+%
+\setlength{\parskip}{2ex plus 0.5ex minus 0.2ex}
+\setlength{\parindent}{0pt}
+\fvset{xleftmargin=0pt}
+
+%
+% utilities
+%
+% \newenvironment{type}{\ttfamily}{\par}
+
+% \newlength{\spacer}
+% \setlength{\spacer}{1in}
+
+% \newenvironment{nscenter}
+%  {\parskip=.5em\par\nopagebreak\centering}
+%  {\parskip=.5em\par\noindent\ignorespacesafterend}
+
+%
+% table-ish display of code for tracing instructions
+%
+\newenvironment{tracelist}[1][l]{%
+  \vspace*{-\baselineskip}\begin{center}%[htb!]
+    \ttfamily
+    \centering
+    \begin{tabular}{#1}}{%
+    \end{tabular}
+  \end{center}\vspace*{-\baselineskip}}
+
+\newenvironment{tracelist-left}[1][l]{
+    \ttfamily
+    \begin{tabular}{#1}}{
+    \end{tabular}
+}
+
+% \newcommand{\emptyfield}{\underline{\hspace{0.4em}}}
+
+%
+% listings
+%
+\newcounter{lineno}
+\newcommand{\typesetnline}[1]{\addtocounter{lineno}{1}%
+    \noindent\hskip\listingindent\makebox[0pt][r]{{\color{Gray}\tt\tiny\arabic{lineno} \ }}%
+    \strut #1\par\penalty\listingpenalty}
+\NewFileListingCommand{\nlisting}{1}{\prelistingskip}%
+    {\setcounter{lineno}{0}\listingfont}{\typesetnline}{\postlistingskip}
+
+\newcommand\prglisting[1]{\vtop{\vskip2\parskip\filelisting{#1}}}
+\newcommand\prnlisting[1]{\vtop{\vskip2\parskip\nlisting{#1}}}
+\setlength{\listingskipamount}{0pt}
+\setlength{\listingindent}{0pt}
+
+%
+% xsim - exercises, questions and tasks
+%
+\DeclareExerciseEnvironmentTemplate{none}
+  {%
+    %
+    \IfInsideSolutionF{%
+      \GetExercisePropertyT{points}{ % <<< notice the space
+        (\printgoal{\PropertyValue}%
+        \GetExercisePropertyT{bonus-points}{+\printgoal{\PropertyValue}}%
+        \,\IfExerciseGoalSingularTF{points}
+            {\XSIMtranslate{point}}
+            {\XSIMtranslate{points}})%
+      }%
+    } % <<< notice the space
+  }
+  {}
+
+% simple default question type
+\DeclareExerciseType{question}{
+    exercise-env = question,
+    solution-env = answer,
+    exercise-name = \XSIMtranslate{question},
+    solution-name =  \XSIMtranslate{answer},
+    exercise-template = default,
+    solution-template = default
+}
+
+% exercises (consisting of multiple tasks) should not have their own headings
+\SetExerciseParameters{exercise}{
+    exercise-template = none,
+    solution-template = none
+}
+
+% custom tasks
+% \settasks{debug} % shows debugging boxes around the task envs
+\NewTasks[item-indent=0pt,label-offset=0pt,label-width=0ex,after-item-skip=2em]{mltasks}
+\NewTasks[item-indent=0pt,label-width=3em]{sltasks}
+\NewTasks[item-indent=2em,label-offset=1em,label-width=1em,after-item-skip=3em plus 3em minus 3em]{longtasks}
+\newlist{items}{enumerate}{1}
+\setlist[items]{topsep=0pt,itemsep=0pt,label=\alph*.,align=left,leftmargin=1.5em,labelsep=0pt,labelwidth=1.5em,after=\vspace{-\baselineskip}}
+
+\begin{document}
+
+    % \clearpage\mbox{}\clearpage
+    \title{Basisboek Programmeren}
+    \maketitle
+
+    Copyright 2019 - Martijn Stegeman / UvA\\
+    Alle rechten voorbehouden
+
+\tableofcontents
+
+    \chapter{Expressies}
+    \newpage
+
+    \section{Rekenen met gehele getallen}
+    \import{011-integers/}{tasks.tex}            \newpage
+    \import{011-integers/}{explanation.tex}      \newpage
+
+    \section{Prioriteitsregels}
+    \import{012-precedence/}{tasks.tex}          \newpage
+    \import{012-precedence/}{explanation.tex}    \newpage
+
+    \section{Rekenen met verschillende soorten getallen}
+    \import{013-floats/}{tasks.tex}              \newpage
+    \import{013-floats/}{explanation.tex}        \newpage
+
+    \chapter{Logica}
+    \newpage
+
+    \section{Beweringen}
+    \import{021-bool-expr/}{tasks.tex}           \newpage
+    \import{021-bool-expr/}{explanation.tex}     \newpage
+
+    \section{Logische operaties}
+    \import{022-bool-logic/}{tasks.tex}          \newpage
+    \import{022-bool-logic/}{explanation.tex}    \newpage
+
+    \section{Oefeningen: condities}
+    \import{023-bool-write/}{tasks.tex}          \newpage \mbox{} \newpage
+
+    \chapter{Flow en variabelen}
+    \newpage
+
+    \section{Variabelen}
+    \import{031-variables/}{tasks.tex}           \newpage
+    \import{031-variables/}{explanation.tex}     \newpage
+
+    \section{Algoritme: verwisseling}
+    \import{032-swap/}{tasks.tex}                \newpage
+    \import{032-swap/}{explanation.tex}          \newpage
+
+    \chapter{Voorwaardelijke opdrachten}
+    \newpage
+
+    \section{Voorwaardelijke opdrachten traceren}
+    \import{041-conditions/}{tasks.tex}          \newpage
+    \import{041-conditions/}{explanation.tex}    \newpage
+
+    \section{Meerdere variabelen}
+    \import{042-multiline/}{tasks.tex}           \newpage
+    \import{042-multiline/}{explanation.tex}     \newpage
+
+    \section{Anders}
+    \import{043-else/}{tasks.tex}                \newpage
+    \import{043-else/}{explanation.tex}          \newpage
+
+    \chapter{Herhaling met \texttt{while}}
+    \newpage
+
+    \section{Traceren}
+    \import{051-tracing/}{tasks.tex}             \newpage
+    \import{051-tracing/}{explanation.tex}       \newpage
+
+    \section{Complexe condities}
+    \import{052-complex-loop-cond/}{tasks.tex}       \newpage
+    \import{052-complex-loop-cond/}{explanation.tex} \newpage
+
+    \section{Meerdere variabelen}
+    \import{053-loop-multivar/}{tasks.tex}       \newpage
+    \import{053-loop-multivar/}{explanation.tex} \newpage
+
+    \chapter{Herhaling met \texttt{for}}
+    \newpage
+
+    \section{For-loops}
+    \import{061-for-intro/}{tasks.tex}           \newpage
+    \import{061-for-intro/}{explanation.tex}     \newpage
+
+    \section{Traceren}
+    \import{062-for/}{tasks.tex}                 \newpage
+    \import{062-for/}{explanation.tex}           \newpage
+
+    \section{For en while}
+    \import{063-for-while/}{tasks.tex}           \newpage
+    \import{063-for-while/}{explanation.tex}     \newpage
+
+    \chapter{Algoritmen: reeksen}
+    \newpage
+
+    \section{Reeksen}
+    \import{071-sequences/}{tasks.tex}           \newpage
+    \import{071-sequences/}{explanation.tex}     \newpage
+
+    \section{Complexere reeksen}
+    \import{072-sequences-ctd/}{tasks.tex}       \newpage
+    \import{072-sequences-ctd/}{explanation.tex} \newpage
+
+    \section{Filteren}
+    \import{073-filter/}{tasks.tex}              \newpage
+    \import{073-filter/}{explanation.tex}        \newpage
+
+    \chapter{String}
+    \newpage
+
+    \section{Indexering van strings}
+    \import{081-indexing/}{tasks.tex}           \newpage
+    \import{081-indexing/}{explanation.tex}     \newpage
+
+    \section{Herhaling en strings}
+    \import{082-string-loops/}{tasks.tex}       \newpage
+    \import{082-string-loops/}{explanation.tex} \newpage
+
+    \section{Herhaling en strings 2}
+    \import{083-string-loops/}{tasks.tex}       \newpage
+    \import{083-string-loops/}{explanation.tex} \newpage \mbox{} \newpage
+
+    \chapter{Arrays}
+    \newpage
+
+    \section{Arrays}
+    \import{091-arrays/}{tasks.tex}             \newpage
+    \import{091-arrays/}{explanation.tex}       \newpage
+
+    \section{Arrays aanpassen}
+    \import{092-changing/}{tasks.tex}           \newpage
+    \import{092-changing/}{explanation.tex}     \newpage
+
+    \section{Herhaling en arrays}
+    \import{093-array-loops/}{tasks.tex}        \newpage
+    \import{093-array-loops/}{explanation.tex}  \newpage
+
+    \chapter{Functies}
+    \newpage
+
+    \section{Functies die printen}
+    \import{101-func-print/}{tasks.tex}         \newpage
+    \import{101-func-print/}{explanation.tex}   \newpage
+
+    \section{Parameters}
+    \import{102-func-params/}{tasks.tex}        \newpage
+    \import{102-func-params/}{explanation.tex}  \newpage
+
+    \section{Functies aanroepen met variabelen}
+    \import{103-func-vars/}{tasks.tex}          \newpage
+    \import{103-func-vars/}{explanation.tex}    \newpage
+
+    \chapter{Functies die iets uitrekenen}
+    \newpage
+
+    \section{Functies en globale variabelen}
+    \import{111-globals/}{tasks.tex}            \newpage
+    \import{111-globals/}{explanation.tex}      \newpage
+
+    \section{Parameters en globale variabelen}
+    \import{112-globals-vars/}{tasks.tex}       \newpage
+    \import{112-globals-vars/}{explanation.tex} \newpage
+
+    \section{Functies die iets teruggeven}
+    \import{113-return/}{tasks.tex}             \newpage
+    \import{113-return/}{explanation.tex}       \newpage
+
+    \section{Functies die resultaten van functies retourneren}
+    \import{114-calls/}{tasks.tex}              \newpage
+    \import{114-calls/}{explanation.tex}        \newpage
+
+    \chapter*{Antwoorden}
+    \printsolutions[headings-template=collection]
+
+\end{document}

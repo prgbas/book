@@ -1,0 +1,42 @@
+\paragraph{Toekenning}
+
+In het volgende stukje code wordt een \emph{waarde} aan een \emph{variabele} toegekend:
+
+\begin{tracelist}
+  het = 2.2
+\end{tracelist}
+
+Bij het uitvoeren van die regel code wordt een variabele aangemaakt met de naam \texttt{het}, die op dat moment de waarde \texttt{2.2} krijgt toegekend. Deze variabele is daarmee onderdeel van de \emph{eindtoestand} na uitvoeren van het codefragment. In een codefragment kunnen ook meerdere toekenningen onder elkaar staan. Zo worden in het volgende fragment worden drie variabelen aangemaakt, elk met een eigen naam:
+
+\begin{tracelist}[l|ccc]
+                     &         \texttt{ike} &      \texttt{dev} &         \texttt{wan} \\
+ \texttt{ike = 3.14} & \fbox{\texttt{3.14}} &                   &                      \\
+\texttt{dev = 3 / 4} &        \texttt{3.14} & \fbox{\texttt{0}} &                      \\
+ \texttt{wan = 0.75} &        \texttt{3.14} &       \texttt{0} & \fbox{\texttt{0.75}}
+\end{tracelist}
+
+Links staan de regels code waarin de variabelen worden aangemaakt. Rechts houden we bij wat er gebeurt: we \emph{traceren} de code. Bij toekenning zetten we een kader om de nieuwe waarde, en op volgende regels nemen we die waarde over. Dan lezen we op de laatste regel de eindtoestand na uitvoeren van alle regels code: de drie variabelen \texttt{ike}, \texttt{dev} en \texttt{wan} met hun waarden.
+
+\paragraph{Volgorde}
+
+Het is ook mogelijk een tweede keer (of vaker) een waarde toe te kennen aan een variabele. De ``oude'' waarde wordt daarmee overschreven. Zo zie je dat de \emph{volgorde} van een programma belangrijk is: altijd van de bovenste naar de onderste regel. Kijk maar naar dit voorbeeld:
+
+\begin{tracelist}[l|c]
+          & wei               \\
+  wei = 1 & \cancel{\fbox{1}} \\
+  wei = 4 & \fbox{4}
+\end{tracelist}
+
+Er wordt twee keer een waarde toegekend aan de variabele \texttt{wei}, zoals je kunt zien aan de twee vierkantjes rondom de waarde. Maar de eindtoestand bestaat slechts uit \'{e}\'{e}n variabele genaamd \texttt{wei}, met de waarde \texttt{4}. De eerder toegekende waarde \texttt{1} is daarmee verdwenen.
+
+\paragraph{Variabelen in expressies}
+
+Nu we de beschikking hebben over variabelen, kunnen we deze ook onder hun toegewezen naam gebruiken in berekeningen.
+
+\begin{tracelist}[l|cc]
+                & hat      & say      \\
+  hat = 1       & \fbox{1} &          \\
+  say = hat + 4 & 1        & \fbox{5}
+\end{tracelist}
+
+De eindtoestand na het uitvoeren van de laatste regel bestaat uit twee variabelen, namelijk \texttt{hat = 1} en \texttt{say = 5}.

@@ -1,0 +1,41 @@
+\paragraph{else}
+Bij een \texttt{if} kun je ook een \texttt{else} tegen komen. Met het commando \texttt{else} geven we aan wat moet gebeuren als \emph{niet} aan de voorwaarde van de \texttt{if} is voldaan. De \texttt{else} hoort dus altijd bij de \texttt{if} die er vlak boven staat.
+
+\begin{verbatim}
+1  a = 1
+2  if(a < 0)
+3      a = a + 10
+4  else
+5      a = a - 10
+\end{verbatim}
+
+Het bovenstaande programma geeft de volgende trace:
+
+\begin{tracelist-left}[l|ccccccc]
+regel & \texttt{1} & \texttt{2} & \texttt{4} & \texttt{5} \\ \hline
+\texttt{a} & \fbox{\texttt{1}} & \texttt{1} & \texttt{1} & \texttt{-9}
+\end{tracelist-left}
+
+Merk op dat met een \texttt{if}-\texttt{else} altijd twee mogelijkheden worden beschreven: ofwel er is aan de voorwaarde voldaan, dus \texttt{a < 0}, ofwel \texttt{a} heeft een andere waarde, dus \texttt{a >= 0}.
+
+\paragraph{else\,if}
+Om meer dan twee verschillende opties te beschrijven, kunnen met \texttt{else\,if} nog meer mogelijkheden worden toegevoegd. In het volgende programma zijn de drie mogelijkheden \texttt{a < 0}, \texttt{a > 0} en resterend \texttt{a = 0}. Steeds is \'{e}\'{e}n afhankelijke instructie aanwezig, die uitgevoerd wordt als aan de juiste voorwaarde wordt voldaan.
+
+\begin{verbatim}
+1  a = 3
+2  if(a < 0)
+3      a = -1
+4  else if(a > 0)
+5      a = 1
+6  else
+7      a = 100
+\end{verbatim}
+
+In dit geval start het programma met de waarde \texttt{a = 3}, en de trace ziet er als volgt uit:
+
+\begin{tracelist-left}[l|ccccccc]
+regel & \texttt{1} & \texttt{2} &  \texttt{4} & \texttt{5} &  \\ \hline
+var \texttt{a} & \fbox{\texttt{3}} & \texttt{3} & \texttt{3} & \fbox{\texttt{1}} \\
+\end{tracelist-left}
+
+Door meer dan \'{e}\'{e}n \texttt{else\,if} te gebruiken is het mogelijk om nog veel meer dan drie mogelijkheden te beschrijven. De \texttt{else} komt wel altijd als laatste; deze beschrijft immers de ``laatste mogelijkheid''.

@@ -1,0 +1,43 @@
+\paragraph{For-loops}
+Onderstaand codefragment print de getallen 0 t/m 9 met een \texttt{while}-loop.
+
+\begin{verbatim}
+1 i = 0
+2 while(i < 10)
+3     print(i)
+4     i++
+\end{verbatim}
+
+Zoals je misschien is opgevallen bevatten veel loop-constructies min of meer dezelfde ingredienten: Een \textbf{initialisatie} (\texttt{i = 0}), een \textbf{conditie} (\texttt{i < 10}), en een \textbf{update} (\texttt{i++}). Omdat dit patroon zo veel voorkomt, hebben de meeste programmeertalen hier een speciale constructie voor: de \texttt{for}-loop. Het onderstaande stukje code laat precies hetzelfde programma zien, maar dan geschreven als een \texttt{for}-loop.
+
+\begin{verbatim}
+1 for(i = 0; i < 10; i++)
+2    print(i)
+\end{verbatim}
+
+De \texttt{for}-loop bevat dezelfde drie ingredienten als de \texttt{while}-loop: De initialisatie (\texttt{i = 0}), de conditie (\texttt{i < 10}), en de update (\texttt{i++}). De initialisatie (\texttt{i = 0}), wordt alleen de eerste keer uitgevoerd. De conditie (\texttt{i < 10}) wordt elke keer voor het begin van de iteratie uitgevoerd. De update (\texttt{i++}) wordt elke keer \emph{aan het einde} van de iteratie uitgevoerd. Dus, de volgorde van executie in dit voorbeeld:
+
+\begin{itemize}
+\item regel 1, \texttt{i = 0} (initialisatie)
+\item regel 1, \texttt{i < 10} (conditie)
+\item regel 2, \texttt{print(i)}
+\item regel 1, \texttt{i++} (update)
+\item regel 1, \texttt{i < 10} (conditie)
+\item regel 2, \texttt{print(i)}
+\item etc.
+\end{itemize}
+
+Het lastige hierbij is dat regel 1 van de \texttt{for}-loop dus eigenlijk 3 verschillende commando's heeft, die ook op verschillende momenten worden uitgevoerd. De makkelijktse manier om te zien hoe een \texttt{for}-loop wordt uitgevoerd is door hem te vertalen naar een \texttt{while}-loop:
+
+\begin{tabular}{lp{4em}l}
+                                         && \tikzmark{i2}\verb|<init>| \\
+\verb|for(<init>|\tikzmark{i1}\verb|; <conditie>|\tikzmark{c1}\verb|; <update>|\tikzmark{u1}\verb|)|
+&& \verb|while|\tikzmark{c2}\verb|(<conditie>)| \\
+\verb|    <inhoud van loop>|             && \verb|    <inhoud van loop>| \\
+                                         && \verb|    |\tikzmark{u2}\verb|<update>|
+\end{tabular}
+\begin{tikzpicture}[overlay,remember picture]
+\draw[->, line width=0.5pt] ([yshift=0.9em,xshift=-0.5em]{pic cs:i1}) [bend left] to ([yshift=0.3em]{pic cs:i2});
+\draw[->, line width=0.5pt] ([yshift=0em,xshift=-0.5em]{pic cs:c1}) [bend right] to ([yshift=-0.1em]{pic cs:c2});
+\draw[->, line width=0.5pt] ([yshift=0em,xshift=-0.5em]{pic cs:u1}) [bend right] to ([yshift=0.3em]{pic cs:u2});
+\end{tikzpicture}

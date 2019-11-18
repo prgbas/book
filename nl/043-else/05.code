@@ -1,0 +1,7 @@
+a = 3
+if(a < 0)
+   a = 7
+else if (a > 2)
+   a = 8
+else
+   a = 9

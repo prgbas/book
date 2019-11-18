@@ -1,0 +1,5 @@
+string mak(x, y, z):
+   return y
+mis = "cal"
+res = mak("sol", mis, "toa")
+print(res)

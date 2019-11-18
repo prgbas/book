@@ -1,0 +1,100 @@
+\paragraph{Filter}
+
+Neem de volgende reeks:
+
+\begin{verbatim}
+* 2 4 * 8 10 * 14 16 * ...
+\end{verbatim}
+
+De reeks lijkt erg op de eenvoudige standaardreeks, maar elk getal dat deelbaar is door 3, is vervangen door een \texttt{*}. Om deze reeks te genereren, gebruiken we een \texttt{if}-\texttt{else}:
+
+\begin{verbatim}
+for(i = 0; i < 10; i++)
+    getal = i * 2
+    if(getal % 3 == 0)
+        print("*")
+    else
+        print(getal)
+\end{verbatim}
+
+
+% \paragraph{Weglaten}
+%
+% Met behulp van filters kun je ook elementen weglaten uit een reeks. Vergelijk de volgende reeks met de bovenstaande. In dit geval wordt voor alle getallen deelbaar door 3 \emph{niets} geprint.
+%
+% \begin{verbatim}
+% 2 4 8 10 14 16 ...
+% \end{verbatim}
+
+
+
+
+
+
+% Stel je wil hiervan de eerste 10 getallen printen. Wat voor een algoritme zou hiervoor kunnen bedenken? Misschien kunnen we uitgaan van iets wat we al kennen.
+%
+% Eigenlijk is de reeks die we willen printen bijna \texttt{0 2 4 6 8 10 12 14 16 18 ...}, met een \textbf{uitzondering}: de getallen \texttt{0}, \texttt{6}, \texttt{12}, en \texttt{18} (alle getallen deelbaar door \texttt{3}) zijn vervangen door een \texttt{*}. Dus wellicht kunnen we eerst een loop voor die reeks zonder uitzonderingen maken.
+%
+% \begin{verbatim}
+% 1 for(i = 0; i < 10; i++)
+% 2     getal = i * 2
+% 3     print(getal)
+% \end{verbatim}
+%
+% Als we hier een trace voor maken krijgen we het volgende.
+%
+% \setlength{\tabcolsep}{2.7pt}
+% \begin{tracelist-left}[l|cccccccccccccccccclc]
+% regel & \texttt{1i} & \texttt{1c} & \texttt{2} & \texttt{3} & \texttt{1u} & \texttt{1c}
+%                                   & \texttt{2} & \texttt{3} & \texttt{1u} & \texttt{1c}
+%                                   & \texttt{2} & \texttt{3} & \texttt{1u} & \texttt{1c}
+%                                   & \texttt{2} & \texttt{3} & \texttt{1u} & \texttt{1c} & ... \\ \hline
+% var i & \fbox{\texttt{0}}  & \texttt{0}
+%                                   & \texttt{0} & \texttt{0} & \fbox{\texttt{1}} & \texttt{1}
+%                                   & \texttt{1} & \texttt{1} & \fbox{\texttt{2}} & \texttt{2}
+%                                   & \texttt{2} & \texttt{2} & \fbox{\texttt{3}} & \texttt{3}
+%                                   & \texttt{3} & \texttt{3} & \fbox{\texttt{4}} & \texttt{4} & ...\\
+% var getal &  &  & \fbox{\texttt{0}} & \texttt{0} & \texttt{0} & \texttt{0}
+%                 & \fbox{\texttt{2}} & \texttt{2} & \texttt{2} & \texttt{2}
+%                 & \fbox{\texttt{4}} & \texttt{4} & \texttt{4} & \texttt{4}
+%                 & \fbox{\texttt{6}} & \texttt{6} & \texttt{6} & \texttt{6} & ... \\
+% print &  &  &  & \texttt{0} & &
+%             & & \texttt{2} & &
+%             & & \texttt{4} & &
+%             & & \texttt{6} & & & ...
+% \end{tracelist-left}
+% \setlength{\tabcolsep}{6pt}
+%
+% Eigenlijk is dit al bijna goed. Alleen als \texttt{getal} deelbaar is door 3 moeten we niet \texttt{getal} zelf printen, maar een \texttt{*}. Wacht even, \textbf{als} en \textbf{deelbaar}, die termen die kennen we. De intu"itie ``als \texttt{getal} deelbaar is door 3'' kunnen we naar code vertalen: \verb|if(getal % 3 == 0)|. Dit kunnen we aan ons algoritme toevoegen:
+%
+% \begin{verbatim}
+% 1 for(i = 0; i < 10; i++)
+% 2     getal = i * 2
+% 3     if(getal % 3 == 0)
+% 4         print("*")
+% 5     else
+% 6         print(getal)
+% \end{verbatim}
+%
+% Zoals je kunt zien aan de trace voor dit algoritme geeft dit de bovengenoemde reeks.
+%
+% \setlength{\tabcolsep}{1.4pt}
+% \begin{tracelist-left}[l|cccccccccccccccccccccclc]
+% regel & \texttt{1i} & \texttt{1c} & \texttt{2} & \texttt{3} & \texttt{4} & \texttt{1u} & \texttt{1c}
+%                                   & \texttt{2} & \texttt{3} & \texttt{6} & \texttt{1u} & \texttt{1c}
+%                                   & \texttt{2} & \texttt{3} & \texttt{6} & \texttt{1u} & \texttt{1c}
+%                                   & \texttt{2} & \texttt{3} & \texttt{4} & \texttt{1u} & \texttt{1c} & ... \\ \hline
+% var i & \fbox{\texttt{0}} & \texttt{0} & \texttt{0} & \texttt{0} & \texttt{0} &  \fbox{\texttt{1}} & \texttt{1}
+%                                   & \texttt{1} & \texttt{1} & \texttt{1} & \fbox{\texttt{2}} & \texttt{2}
+%                                   & \texttt{2} & \texttt{2} & \texttt{2} & \fbox{\texttt{3}} & \texttt{3}
+%                                   & \texttt{3} & \texttt{3} & \texttt{3} & \fbox{\texttt{4}} & \texttt{4} & ...\\
+% var getal &  &  & \fbox{\texttt{0}} & \texttt{0} & \texttt{0} & \texttt{0} & \texttt{0}
+%                 & \fbox{\texttt{2}} & \texttt{2} & \texttt{2} & \texttt{2} & \texttt{2}
+%                 & \fbox{\texttt{4}} & \texttt{4} & \texttt{4} & \texttt{4} & \texttt{4}
+%                 & \fbox{\texttt{6}} & \texttt{6} & \texttt{6} & \texttt{6} & \texttt{6} & ... \\
+% print &  &  & & & \texttt{*} & &
+%             & & & \texttt{2} & &
+%             & & & \texttt{4} & &
+%             & & & \texttt{*} & & & ...
+% \end{tracelist-left}
+% \setlength{\tabcolsep}{6pt}

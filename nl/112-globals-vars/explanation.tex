@@ -1,0 +1,28 @@
+% WARNING (DUS ERROR): DIT KAN NIET IN C -> SHADOWS LOCAL VAR (WARNING), MAAR ANDERE TALEN WEL.
+
+\paragraph{Parameters en globale variabelen}
+
+Wanneer een parameter van een functie dezelfde naam heeft als een globale variabele, wordt de parameter gebruikt. Bijvoorbeeld:
+
+\begin{verbatim}
+var = 1
+void what(var):
+  print(var)
+what(2)
+\end{verbatim}
+
+Dit stukje code print \texttt{2}, omdat de functie \texttt{what} wordt aangeroepen met de waarde \texttt{2}. Die waarde krijgt de naam \texttt{var} binnen de functie, en wordt vervolgens uitgeprint. De variabele \texttt{var} die buiten de functie is gedefineerd wordt hier helemaal niet gebruikt.
+
+In het geval dat een parameter van een functie dezelfde naam heeft als een globale variabele, kan je de waarde van de globale variabele niet aanpassen. Kijk even mee naar het volgende stukje code:
+
+\begin{verbatim}
+rar = 0
+void flex(rar):
+  rar = rar + 1
+  print(rar)
+flex(rar)
+flex(rar)
+flex(rar)
+\end{verbatim}
+
+Dit stukje code print driemaal de waarde \texttt{1}. Dat komt omdat de waarde van de globale variabele \texttt{rar}, \texttt{0}, wordt meegegeven aan de functie \texttt{flex}. Binnen de functie \texttt{flex} wordt de waarde \texttt{0} toegewezen aan \texttt{rar}. Dit is dezelfde naam als die van de globale variabele. Bij deze nieuwe variabele wordt de waarde \texttt{1} opgeteld, en dat wordt vervolgens uitgeprint. De variabele buiten de functie blijft onveranderd.

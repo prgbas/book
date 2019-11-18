@@ -1,0 +1,21 @@
+\paragraph{Volgorde van operaties}
+
+In expressies met meer dan \'e\'en operatie wordt de volgorde belangrijk. Als het gaat om gelijksoortige rekenkundige operaties, bijvoorbeeld het drietal \texttt{*}, \texttt{/} en \texttt{\%}, dan worden de operaties van \emph{links naar rechts} ge\"evalueerd. Bijvoorbeeld:
+
+\begin{equation*}
+\texttt{1\,/\,2\,/\,2} \qquad\text{geeft}\qquad \texttt{0\,/\,2} \qquad\text{geeft}\qquad \texttt{0}
+\end{equation*}
+
+Als je deze expressie verkeerd om evalueert, dus van rechts naar links, dan komt er een heel ander antwoord uit, namelijk \texttt{1}. De volgorde is dus van belang.
+
+\paragraph{Prioriteitsregels}
+
+Daar waar ambigu\"iteit is over de volgorde van expressies, gelden prioriteitsregels:
+
+\begin{enumerate}
+    \item deelexpressies tussen haakjes gaan v\'o\'or andere delen
+    \item daarna de rekenkundige bewerkingen \texttt{*}, \texttt{/} en \texttt{\%}
+    \item en dan volgen de bewerkingen \texttt{+} en \texttt{-}
+\end{enumerate}
+
+De prioriteit van de verschillende operaties hangt af van waar ze zich bevinden in deze array. Operaties van prioriteit 1 worden eerst uitgevoerd, en operaties van prioriteit 2 daarna. Als meerdere expressies dezelfde prioriteit hebben, hou je weer de van-links-naar-rechts-regel aan.

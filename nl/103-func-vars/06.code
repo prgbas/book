@@ -1,0 +1,5 @@
+x = 3
+y = 5
+void baz(y, x):
+   print(x / y)
+baz(x, y)

@@ -1,0 +1,42 @@
+\paragraph{Strings} Een string bestaat uit losse \emph{tekens} of \emph{characters}. We defini\"{e}ren een string \texttt{s} die bestaat uit 13 tekens:
+
+\begin{verbatim}
+s = "Hello, world!"
+\end{verbatim}
+
+De tekens in zo'n string hebben een \emph{positie} of \emph{index}. Daarbij wordt altijd vanaf 0 geteld:
+
+\begin{tabular}{l|ccccccccccccc}
+teken&\texttt{H}&\texttt{e}&\texttt{l}&\texttt{l}&\texttt{o}&\texttt{,}&\texttt{ }&\texttt{w}&\texttt{o}&\texttt{r}&\texttt{l}&\texttt{d}&\texttt{!}\\
+\hline
+index&0&1&2&3&4& 5&6&7&8&9& 10&11&12 \\
+\end{tabular}
+
+\paragraph{Indexering}
+
+We kunnen de losse tekens van een string ophalen door te indexeren:
+
+\begin{tabular}{l}
+\texttt{s = "Hello, world!"} \\
+\texttt{print(s[1])} \\
+\hline
+\texttt{e}
+\end{tabular}
+
+Dit stukje code print het onderdeel van de string \texttt{"Hello, world!"} dat zich bevindt op plaats 1. Omdat we vanaf 0 tellen, is dit de letter \texttt{e}, zoals in de tabel hierboven.
+
+\paragraph{Variabelen als index}
+We kunnen natuurlijk ook prima variabelen of expressies gebruiken als index van een string:
+
+\begin{tabular}{l}
+\texttt{s = "Hello, world!"} \\
+\texttt{i = 7} \\
+\texttt{print(s[(i - 1) / 2]} \\
+\hline
+\texttt{l}
+\end{tabular}
+
+\paragraph{Grenzen}
+
+Lezen of schrijven buiten de grenzen van een string levert een \emph{out of bounds}-fout op of een \emph{segmentation fault}. Bijvoorbeeld bij het opvragen van de waarde op positie 10 van de string \texttt{"Error"}. Hou de grenzen dus goed in de gaten!
+

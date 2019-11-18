@@ -1,0 +1,3 @@
+s = "args"
+for(i = 0; i < 6; i = i + 1)
+   print(s[i / 2])

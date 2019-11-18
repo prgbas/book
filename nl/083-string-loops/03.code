@@ -1,0 +1,6 @@
+i = 0
+s = "srblcabe"
+while(i < 4)
+   print(s[i])
+   print(s[i + 4])
+   i = i + 1

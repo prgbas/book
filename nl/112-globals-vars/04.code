@@ -1,0 +1,9 @@
+pop = 30
+void bis(baz):
+   baz = baz + 1
+   pop = pop + 1
+   print(baz + pop)
+baz = 10
+bis(baz)
+bis(baz)
+bis(baz)

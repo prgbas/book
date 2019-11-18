@@ -1,0 +1,6 @@
+pop = 10
+void bar():
+   pop = pop + 1
+   print(pop)
+bar()
+bar()

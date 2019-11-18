@@ -1,0 +1,3 @@
+s = "Wrap"
+len = length(s)
+print(s[3 % len])

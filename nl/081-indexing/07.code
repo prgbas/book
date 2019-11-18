@@ -1,0 +1,3 @@
+s = "Leibniz"
+a = 2
+print(s[a])

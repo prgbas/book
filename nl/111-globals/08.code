@@ -1,0 +1,8 @@
+pop = 3
+void bar():
+   pop = pop - 1
+print(pop)
+bar()
+pop = pop - 2
+bar()
+print(pop)

@@ -1,0 +1,4 @@
+ufo = "fly"
+void foo():
+   print(ufo)
+foo()

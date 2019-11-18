@@ -1,0 +1,113 @@
+\paragraph{Standaard-reeksen}
+
+Met een loop kun je reeksen getallen printen. Met de volgende \texttt{for}-loop printen we de getallen 0 tot en met 9:
+
+\begin{minipage}{0.45\textwidth}
+\begin{verbatim}
+for(i = 0; i < 10; i++)
+    print(i)
+\end{verbatim}
+\end{minipage}
+\vline\hfill
+\begin{minipage}{0.45\textwidth}
+\texttt{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+\end{minipage}
+
+Om andere reeksen te printen moet je achterhalen wat de regelmaat in de reeks is. Vaak kun je je loop dan baseren op het voorbeeld hierboven. Wil je bijvoorbeeld tien getallen uit de reeks $0, 4, 8, 12, 16, ...$ printen, dan zou je kunnen opmerken dat elk van die getallen steeds vier keer zo groot is als het getal uit de reeks hierboven. Dus kunnen we ons programma zo aanpassen:
+
+\begin{minipage}{0.45\textwidth}
+\begin{verbatim}
+for(i = 0; i < 10; i++)
+    print(i * 4)
+\end{verbatim}
+\end{minipage}
+\vline
+\begin{minipage}{0.45\textwidth}
+\hfill\mbox{\texttt{0, 4, 8, 12, 16, 20, 24, 28, 32, 36}}
+\end{minipage}
+
+Voor de reeks $1, 2, 3, 4, ...$ kunnen we het volgende programma gebruiken. Vergelijk het weer met het eerste programma hierboven:
+
+\begin{minipage}{0.45\textwidth}
+\begin{verbatim}
+for(i = 0; i < 10; i++)
+    print(i + 1)
+\end{verbatim}
+\end{minipage}
+\vline\hfill
+\begin{minipage}{0.45\textwidth}
+\texttt{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+\end{minipage}
+
+\paragraph{Aantal stappen}
+
+Je kunt de lengte van de reeks vari\"{e}ren door de conditie van de loop zelf aan te passen. Met \texttt{i < 10} printen we 10 getallen, maar dat kan net zo goed een ander aantal zijn.
+
+\paragraph{Traceren}
+
+Om te controleren of de programma's kloppen, kun je een trace maken. Je hoeft waarschijnlijk niet de hele loop uit te schrijven; een aantal stappen is genoeg, zolang je kunt verifi\"{e}ren dat de eerste paar getallen precies kloppen.
+
+% Laten we eens kijken hoe we je met een \emph{loop} verschillende getallenreeksen kunt printen. Stel je wil de eerste \texttt{10} getallen van de volgende reeks printen:
+% \begin{verbatim}
+% 0 4 8 12 16 20 ...
+% \end{verbatim}
+% Aangezien we weten hoeveel getallen we willen printen, namelijk \texttt{10}, ligt een \texttt{for}-loop voor de hand als keuze (maar je zou natuurlijk ook een \texttt{while}-loop kunnen gebruiken). Laten we beginnen met het framework voor de \emph{loop}:
+% \begin{verbatim}
+% 1 for(i = 0; i < 10; i++)
+% 2     ...
+% \end{verbatim}
+% We weten dat deze \emph{loop} 10 keer wordt herhaald, maar verder doet het nog niet zoveel. Op regel \texttt{2} weten we nog niet wat me moeten doen. Maar, we kunnen al wel een \emph{tijdelijke} trace\footnote{Door ruimtegebrek kunnen we maar vier van de tien iteraties traceren.} maken:
+%
+% \setlength{\tabcolsep}{5pt}
+% \begin{tracelist-left}[l|cccccccccccccclc]
+% regel & \texttt{1i} & \texttt{1c} & \texttt{2} & \texttt{1u} & \texttt{1c}
+%                                   & \texttt{2} & \texttt{1u} & \texttt{1c}
+%                                   & \texttt{2} & \texttt{1u} & \texttt{1c}
+%                                   & \texttt{2} & \texttt{1u} & \texttt{1c} & ... \\ \hline
+% var i & \fbox{\texttt{0}} & \texttt{0} & \texttt{0} & \fbox{\texttt{1}} & \texttt{1}
+%                                   & \texttt{1} & \fbox{\texttt{2}} & \texttt{2}
+%                                   & \texttt{2} & \fbox{\texttt{3}} & \texttt{3}
+%                                   & \texttt{3} & \fbox{\texttt{4}} & \texttt{4} & ...
+% \end{tracelist-left}
+% \setlength{\tabcolsep}{6pt}
+%
+% Hoe verder? We weten dat we steeds een getal moeten printen. Dus met die kennis kunnen we de \emph{loop} vast wat verder invullen:
+%
+% \begin{verbatim}
+% 1 for(i = 0; i < 10; i++)
+% 2     getal = ???
+% 3     print(getal)
+% \end{verbatim}
+%
+% Maar, wat moeten we voor \texttt{getal} invullen? We maken eerst een \textbf{gewenste} trace met de getallen uit de reeks (\texttt{0 4 8 12 ...}):
+%
+% \setlength{\tabcolsep}{2.5pt}
+% \begin{tracelist-left}[l|cccccccccccccccccclc]
+% regel & \texttt{1i} & \texttt{1c} & \texttt{2} & \texttt{3} & \texttt{1u} & \texttt{1c}
+%                                   & \texttt{2} & \texttt{3} & \texttt{1u} & \texttt{1c}
+%                                   & \texttt{2} & \texttt{3} & \texttt{1u} & \texttt{1c}
+%                                   & \texttt{2} & \texttt{3} & \texttt{1u} & \texttt{1c} & ... \\ \hline
+% var i & \fbox{\texttt{0}} & \texttt{0} & \texttt{0} & \texttt{0} &  \fbox{\texttt{1}} & \texttt{1}
+%                                   & \texttt{1} & \texttt{1} & \fbox{\texttt{2}} & \texttt{2}
+%                                   & \texttt{2} & \texttt{2} & \fbox{\texttt{3}} & \texttt{3}
+%                                   & \texttt{3} & \texttt{3} & \fbox{\texttt{4}} & \texttt{4} & ...\\
+% var getal &  &  & \fbox{\texttt{0}} & \texttt{0} & \texttt{0} & \texttt{0}
+%                 & \fbox{\texttt{4}} & \texttt{4} & \texttt{4} & \texttt{4}
+%                 & \fbox{\texttt{8}} & \texttt{8} & \texttt{8} & \texttt{8}
+%                 & \fbox{\texttt{12}} & \texttt{12} & \texttt{12} & \texttt{12} & ... \\
+% print &  &  &  & \texttt{0} & &
+%             & & \texttt{4} & &
+%             & & \texttt{8} & &
+%             & & \texttt{12} & & & ...
+% \end{tracelist-left}
+% \setlength{\tabcolsep}{6pt}
+%
+% Met deze gewenste trace kunnen we \textbf{terugredeneren} wat het bijbehorende algoritme zou moeten zijn: We hebben in deze trace ingevuld wat het algoritme zou moeten printen. Daaruit kunnen we vervolgens de waarde van \texttt{getal} afleiden. Nu is het makkelijk te zien dat de variabel \texttt{getal} steeds 4 keer zo groot moet zijn als de index \texttt{i}, oftewel \verb|getal = i * 4|. Als we dat in het algoritme invullen zijn we klaar:
+%
+% \begin{verbatim}
+% 1 for(i = 0; i < 10; i++)
+% 2     getal = i * 4
+% 3     print(getal)
+% \end{verbatim}
+%
+% Je kan het algoritme verifi"eren door zelf de trace na te lopen.

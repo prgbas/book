@@ -1,0 +1,4 @@
+x = 10
+void bar(x, z):
+   print(z / x)
+bar(x, 12)
