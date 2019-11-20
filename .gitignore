@@ -1,6 +1,6 @@
 # for this project
 .DS_Store
-*/_generated/*.tex
+_generated/*.tex
 
 
 ## Core latex/pdflatex auxiliary files:

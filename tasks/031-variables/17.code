@@ -1,0 +1,6 @@
+lod = 2 / 2
+lod = 2 * 3
+nid = lod / 1.0
+mou = lod * 3
+lod = lod - 1
+gyp = 0.5 - 3

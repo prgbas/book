@@ -1,0 +1,52 @@
+\paragraph{Herhaling en strings}
+
+Je kan strings natuurlijk ook combineren met loops.
+
+\begin{verbatim}
+1 s = "Hsopil"
+2 i = 0
+3 len = length(s)
+4 while(i < len)
+5     print(s[i])
+6     i = i + 2
+\end{verbatim}
+
+Op regel \texttt{3} wordt het commando \texttt{length} gebruikt om de lengte van de string \texttt{s} te bepalen (in dit geval 6). Vrijwel alle programmeertalen hebben zo een ingebouwde opdracht.
+
+Als we willen weten wat er geprint wordt tijdens het uitvoeren van deze code kunnen we, net als in eerdere hoofdstukken, een trace maken. Voor dat we dat doen, is het handig om eerste een tabel te maken met de indices van string \texttt{s}:
+
+\begin{tabular}{l|ccccccccccccc}
+index&0&1&2&3&4&5\\ \hline
+karakter&H&s&o&p&i&l
+\end{tabular}
+
+\paragraph{Trace}
+
+In de trace willen we bijhouden wat de waarde van de variabele \texttt{i} is en wat er geprint wordt. Voor het gemak houden we ook de waarde van \texttt{s[i]} bij. Om de trace een beetje compact te houden laten we de waardes van de variabelen \texttt{s = "Hsopil"} en \texttt{len = 6} buiten beschouwing. Deze veranderen toch niet gedurende de loop.
+
+\setlength\tabcolsep{5pt}
+\begin{tracelist-left}[l|cccccccccccccccccccccccccccccccccccccccc]
+regel & \texttt{1} & \texttt{2} & \texttt{3} &
+        \texttt{4} & \texttt{5} & \texttt{6} &
+				\texttt{4} & \texttt{5} & \texttt{6} &
+				\texttt{4} & \texttt{5} & \texttt{6} &
+				\texttt{4}  \\ \hline
+var \texttt{i} &   & \fbox{0} & 0 &
+                 0 & 0 & \fbox{2} &
+								 2 & 2 & \fbox{4} &
+								 4 & 4 & \fbox{6} &
+								 6 \\
+s[i]           &   & H & H &
+               H & H & o &
+               o & o & i &
+               i & i  &
+               & \\
+print          &&&&
+               &H&&
+							 &o&&
+							 &i&&
+							 & \\
+\end{tracelist-left}
+\setlength\tabcolsep{6pt}
+
+Deze code print dus de text \texttt{Hoi} naar het scherm.

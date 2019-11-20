@@ -1,0 +1,6 @@
+void foo():
+   baz()
+   print("cake")
+void baz():
+   print("jump")
+baz()

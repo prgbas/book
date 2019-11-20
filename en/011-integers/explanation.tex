@@ -1,0 +1,44 @@
+\paragraph{Uitdrukkingen}
+
+Een uitdrukking of expressie is een combinatie van getallen en operaties. Zo'n expressie kan door een computer ge\"{e}valueerd worden volgens de wiskundige regels die je al kent. Bijvoorbeeld:
+
+\begin{center}
+  \ttfamily
+  \begin{tabular}{l@{\qquad}l}
+    {\normalfont expressie} & {\normalfont geeft} \\
+    \midrule
+    4 & 4 \\
+    5  & 5 \\
+    4 + 5   & 9 \\
+    4 * 5  & 20 \\
+    \midrule
+  \end{tabular}
+\end{center}
+
+Hieronder en op de volgende pagina's behandelen we een aantal uitzonderingen en bijzonderheden die een rol spelen bij het rekenen met behulp van de computer.
+
+\paragraph{Delen met gehele getallen}
+
+In computers zijn \emph{integers}, ofwel gehele getallen, iets anders dan \emph{floats}, ofwel kommagetallen. In de meeste situaties werken ze hetzelfde, maar er zijn ook verschillen. Het eerste verschil is delen: de uitdrukking \texttt{1\,/\,2} geeft de verrassende uitkomst \texttt{0}. Dat komt doordat een deling met gehele getallen de volgende vraag beantwoordt: \emph{hoe vaak past 2 in het getal 1}? Zie hier een voorbeeld voor \texttt{x\,/\,3}:
+
+\begin{center}
+  \begin{tabular}{ c @{\hspace{25pt}} l l l l l l l l }
+    \texttt{x}    & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\[.5em]
+    \texttt{x\,/\,3}  & 0 & 0 & 0 & 1 & 1 & 1 & 2 & 2 \\
+  \end{tabular}
+\end{center}
+
+\paragraph{Modulo}
+
+Een operatie die je misschien niet kent is \texttt{\%}, ofwel modulo. Deze operatie past precies bij delen met gehele getallen; \texttt{5\,\%\,2} moet de vraag beantwoorden: \emph{2 past 2 keer in 5, hoeveel blijft er dan over}? In dit geval blijft er \texttt{1} over. We geven hetzelfde voorbeeld als hierboven, voor \texttt{x\,\%\,3}:
+
+\begin{center}
+  \begin{tabular}{ c @{\hspace{25pt}} l l l l l l l l }
+    \texttt{x}    & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\[.5em]
+    \texttt{x\,\%\,3} & 0 & 1 & 2 & 0 & 1 & 2 & 0 & 1 \\
+  \end{tabular}
+\end{center}
+
+\paragraph{Deelbaarheid}
+
+Een getal noemen we \emph{deelbaar} door een ander getal als de uitkomst van de modulo \texttt{0} is, ofwel: er blijft niks over bij deling.

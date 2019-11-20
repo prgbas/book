@@ -1,0 +1,67 @@
+\begin{exercise}
+    \begin{longtasks}[counter-format=7.tsk[1]](1)
+        \task
+        Schrijf een algoritme dat de waarden van \emph{drie} variabelen verwisselt, zoals in de volgende illustratie:
+
+        \SetVertexNormal[Shape      = circle,
+        LineWidth  = .7pt]
+        \SetUpEdge[lw         = .7pt,
+        color      = black]
+        \begin{center}
+            \begin{tikzpicture}
+                \Vertex[x=0, y=0]{a}
+                \Vertex[x=2, y=0]{b}
+                \Vertex[x=4, y=0]{c}
+                \tikzset{EdgeStyle/.append style = {->}}
+                \Edge(a)(b)
+                \Edge(b)(c)
+                \tikzset{EdgeStyle/.append style = {->,bend left}}
+                \Edge(c)(a)
+            \end{tikzpicture}
+        \end{center}
+
+        Tip: je kunt waarden verzinnen voor \texttt{a}, \texttt{b} en \texttt{c}, maar dit is niet noodzakelijk om een algemeen algoritme te maken.
+        \task
+        Schrijf een algoritme dat de waarden van \emph{vier} variabelen verwisselt, zoals in de volgende illustratie:
+
+        \SetVertexNormal[Shape      = circle,
+        LineWidth  = .7pt]
+        \SetUpEdge[lw         = .7pt,
+        color      = black]
+        \begin{center}
+            \begin{tikzpicture}
+                \Vertex[x=0, y=0]{a}
+                \Vertex[x=2, y=0]{b}
+                \Vertex[x=4, y=0]{c}
+                \Vertex[x=6, y=0]{d}
+                \tikzset{EdgeStyle/.append style = {->}}
+                \Edge(a)(b)
+                \Edge(b)(c)
+                \Edge(c)(d)
+                \tikzset{EdgeStyle/.append style = {->,bend left=20}}
+                \Edge(d)(a)
+            \end{tikzpicture}
+        \end{center}
+        \task
+        Schrijf een algoritme dat de waarden van \emph{vier} variabelen verwisselt, zoals in de volgende illustratie:
+
+        \SetVertexNormal[Shape      = circle,
+        LineWidth  = .7pt]
+        \SetUpEdge[lw         = .7pt,
+        color      = black]
+        \begin{center}
+            \begin{tikzpicture}
+                \Vertex[x=0, y=0]{a}
+                \Vertex[x=2, y=0]{b}
+                \Vertex[x=4, y=0]{c}
+                \Vertex[x=6, y=0]{d}
+                \tikzset{EdgeStyle/.append style = {->, bend left=20}}
+                \Edge(a)(c)
+                \Edge(b)(d)
+                \tikzset{EdgeStyle/.append style = {->,bend left=20}}
+                \Edge(c)(b)
+                \Edge(d)(a)
+            \end{tikzpicture}
+        \end{center}
+    \end{longtasks}
+\end{exercise}

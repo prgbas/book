@@ -1,0 +1,58 @@
+\paragraph{Arrays}
+In het volgende codefragment wordt een array van integers gedefini\"{e}erd:
+
+\begin{tabular}{l@{\hskip 1em$\rightarrow$\hskip 1em}l}
+\verb|ooy = [5, 6, 7]|    &   \emph{array van integers} \\
+\verb|print(ooy[0])|       &   \emph{print '5'} \\
+\verb|print(ooy[1])|       &   \emph{print '6'} \\
+\verb|print(ooy[2])|       &   \emph{print '7'}
+\end{tabular}
+
+De eerste regel maakt een array met de getallen \texttt{5}, \texttt{6} en \texttt{7} en kent deze toe aan de variabele \texttt{ooy}. De regels eronder printen vervolgens de individuele elementen uit deze array. Let op, net als bij strings beginnen de indices van arrays met tellen bij \texttt{0}.
+
+\paragraph{Types}
+Zoals je ziet, lijken arrays erg op strings. Dat is ook niet zo gek, een string is niets anders dan een array van karakters. Het grote verschil is dat we in een array getallen kunnen opslaan. We kunnen dus een array van integers of floating point getallen maken. De voorbeelden hieronder laten verschillende type arrays zien.
+
+\begin{tabular}{l@{\hskip 1em$\rightarrow$\hskip 1em}l}
+\verb|ooy = [5, 6, 7]|       & \emph{array van integers} \\
+\verb|lia = [5.0, 6.0, 7.0]| & \emph{array van floats} \\
+\verb|aps = ['e', 'f', 'g']| & \emph{array van karakters (in veel talen equivalent aan een string)}\\
+\end{tabular}
+
+\paragraph{Indices}
+Je kan natuurlijk gewoon variabelen gebruiken voor de indices:
+
+% \lstset{numbers=left, numberstyle=\tiny, numbersep=5pt, language=empty}
+%\fbox{
+% \begin{Verbatim}[numbers=left]
+% elk = [1, 2, 3]
+% i = 1
+% print(elk[i])
+% \end{Verbatim}
+%}
+
+\begin{minipage}{0.45\textwidth}
+\begin{verbatim}
+elk = [1, 2, 3]
+i = 1
+print(elk[i])
+\end{verbatim}
+\end{minipage}
+\vline\hfill
+\begin{minipage}{0.45\textwidth}
+print: \texttt{2}
+\end{minipage}
+
+En, net als met strings, is het mogelijk om hele berekeningen te gebruiken als index:
+
+\begin{minipage}{0.45\textwidth}
+\begin{verbatim}
+das = [1, 2, 3]
+i = 1
+print(das[(i + 1) / 2])
+\end{verbatim}
+\end{minipage}
+\vline\hfill
+\begin{minipage}{0.45\textwidth}
+print: \texttt{2}
+\end{minipage}

@@ -1,0 +1,26 @@
+\paragraph{Meerdere variabelen traceren}
+We kunnen \texttt{while}-loops ook traceren als er meerdere variabelen in het spel zijn. Kijk naar het volgende codefragment:
+
+\begin{verbatim}
+1  a = 0
+2  b = 0
+3  while(a < 2)
+4      a = a + 1
+5      b = b + 1
+6  a = 42
+\end{verbatim}
+
+De bijbehorende trace er als volgt uit:
+
+\begin{tracelist-left}[l|ccccccccccc]
+regel & \texttt{1} & \texttt{2} & \texttt{3} &  \texttt{4} &
+                          \texttt{5} & \texttt{3} & \texttt{4} &  \texttt{5} &
+                                                    \texttt{3} & \texttt{6}  \\ \hline
+var \texttt{a} & \fbox{0} & 0 & 0 & \fbox{1} & 1 & 1 & \fbox{2} & 2 & 2 & \fbox{42} \\
+var \texttt{b} & & \fbox{0} & 0 & 0 & \fbox{1} & 1 & 1 & \fbox{2} & 2 & 2 \\
+a < 2 & & & true & & & true & & & \fbox{false}
+\end{tracelist-left}
+
+\paragraph{Increment}
+
+In loops is het vaak zo dat je een teller hebt, een variabele die je bij elke iteratie eentje wil ophogen. Omdat dit zo vaak voorkomt hebben veel programeertalen hier een speciale operatie voor: \texttt{++}. De opdracht \texttt{i++} is equivalent aan \texttt{i = i + 1}. De tegenhanger hiervan is \texttt{i--}. Hiermee verlagen we \texttt{i} juist met \texttt{1}.

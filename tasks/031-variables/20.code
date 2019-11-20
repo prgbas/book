@@ -1,0 +1,6 @@
+fae = 1 + 0.5
+fae = fae - 1.0
+fae = 2 * 0.5
+fae = fae - 1.5
+fae = 0.5 - 2
+fae = fae + 2

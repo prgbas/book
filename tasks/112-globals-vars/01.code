@@ -1,0 +1,4 @@
+void una(lip):
+   print(lip * 3)
+lip = 2
+una(5)

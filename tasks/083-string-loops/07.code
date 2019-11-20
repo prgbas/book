@@ -1,0 +1,3 @@
+s = "hi!"
+for(i = 0; s[i] != '!'; i = i + 1)
+   print(s[i])

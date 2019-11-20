@@ -1,0 +1,2 @@
+for (i = 0; i < 12; i++)
+   print(getal * 2 + 1)

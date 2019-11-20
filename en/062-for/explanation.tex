@@ -1,0 +1,31 @@
+\paragraph{For-loops traceren}
+
+In het volgende stuk code wordt de waarde van een variabele veranderd binnen een \texttt{for}-loop:
+
+\begin{verbatim}
+1  a = -10
+2  for(i = 0; i < 2; i++)
+3      a = i * 2
+4  a = a + 6
+\end{verbatim}
+
+Als we dit fragment willen traceren hebben we een probleem. Regel 2 bestaat eigenlijk uit meerdere opdrachten: initialisatie (\texttt{i = 0}), conditie (\texttt{i < 2}) en update (\texttt{i++}). We kunnen dit expliciet opnemen in de trace:
+
+\setlength\tabcolsep{3pt}
+\begin{tracelist-left}[l|ccccccccccccc]
+regel & \texttt{1} & \texttt{2} & \texttt{2} & \texttt{3} & \texttt{2} & \texttt{2} & \texttt{3} & \texttt{2} & \texttt{2} & \texttt{4} \\
+&  & \texttt{(i = 0)} & \texttt{(i < 2)} & & \texttt{(i++)} & \texttt{(i < 2)} &  & \texttt{(i++)} & \texttt{(i < 2)} &  \\
+\hline
+var \texttt{i} & & \fbox{\texttt{0}} & \texttt{0} & \texttt{0} & \fbox{\texttt{1}} & \texttt{1} & \texttt{1} & \fbox{\texttt{2}} & \texttt{2} & \\
+var \texttt{a} & \fbox{\texttt{-10}} & \texttt{-10} & \texttt{-10} & \fbox{\texttt{0}} & \texttt{0} & \texttt{0} & \fbox{\texttt{2}} & \texttt{2} & \texttt{2} & \fbox{\texttt{8}} \\
+\texttt{i < 2} & & & \texttt{true} & & & \texttt{true} & & & \fbox{\texttt{false}} & \\
+\end{tracelist-left}
+\setlength{\tabcolsep}{6pt}
+
+We hebben in dit voorbeeld voor de duidelijkheid de betreffende commando's onder de labels van de \texttt{for}-loop gezet en de waarheidswaarden van conditie expliciet gemaakt. Je kan dit natuurlijk ook wat beknopter opschrijven:
+
+\begin{tracelist-left}[l|ccccccccccccc]
+regel & \texttt{1} & \texttt{2} & \texttt{2} & \texttt{3} & \texttt{2} & \texttt{2} & \texttt{3} & \texttt{2} & \texttt{2} & \texttt{4} \\ \hline
+var \texttt{i} & & \fbox{\texttt{0}} & \texttt{0} & \texttt{0} & \fbox{\texttt{1}} & \texttt{1} & \texttt{1} & \fbox{\texttt{2}} & \texttt{2} & \\
+var \texttt{a} & \fbox{\texttt{-10}} & \texttt{-10} & \texttt{-10} & \fbox{\texttt{0}} & \texttt{0} & \texttt{0} & \fbox{\texttt{2}} & \texttt{2} & \texttt{2} & \fbox{\texttt{8}} \\
+\end{tracelist-left}

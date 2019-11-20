@@ -1,0 +1,3 @@
+s = "Kolmogorov"
+kul = length(s) - 2
+print(s[kul / 2])

@@ -1,0 +1,47 @@
+\paragraph{Logische operaties}
+
+Het is mogelijk om de waarden \texttt{true} en \texttt{false} te combineren tot meer complexe logische expressies. Zo zijn er de logische operaties \texttt{\&\&} (and) en \texttt{||} (or). Dit zijn de zogeheten waarheidstabellen voor deze operaties:
+
+\begin{center}
+  \ttfamily
+  \begin{tabular}{r@{ \&\& }l@{\qquad}l}
+    \multicolumn{2}{l}{\normalfont expressie} & {\normalfont geeft} \\
+    \midrule
+    true & true   & true \\
+    true & false & false \\
+    false & true  & false \\
+    false & false  & false \\
+    \midrule
+  \end{tabular}
+  \qquad
+  \begin{tabular}{r@{ || }l@{\qquad}l}
+    \multicolumn{2}{l}{\normalfont expressie} & {\normalfont geeft} \\
+    \midrule
+    true  & true   & true \\
+    true  & false  & true \\
+    false & true   & true \\
+    false & false  & false \\
+    \midrule
+  \end{tabular}
+\end{center}
+
+\paragraph{Ontkenning}
+
+De uitkomst van een bewering kan ook ``omgedraaid'' worden. Zet er dan \texttt{!} (not) voor:
+
+\begin{center}
+  \texttt{!true} \quad  geeft \quad  \texttt{false} \qquad  en \qquad  \texttt{!false} \quad geeft \quad \texttt{true}
+\end{center}
+
+\paragraph{Prioriteitsregels}
+
+Ook \texttt{\&\&} en \texttt{||} hebben hun plek in de prioriteitsregels:
+
+\begin{enumerate}
+  \item eerst de expressies tussen haakjes
+  \item dan rekenkundige operaties zoals \texttt{+} en \texttt{*}
+  \item dan beweringen zoals \texttt{>}, \texttt{<}, \texttt{==}, \texttt{!=}, \texttt{>=}, \texttt{<=}
+  \item \texttt{!}
+  \item \texttt{||}
+  \item \texttt{\&\&}
+\end{enumerate}

@@ -1,0 +1,10 @@
+int loo(y, z)
+   return z / 3
+int aam(z, y)
+   return loo(y, z) * 6
+int wah(y, z, x)
+   return aam(y, z) - 2
+z = 2
+x = 5
+y = 4
+print(wah(x, y, z))

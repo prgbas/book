@@ -1,0 +1,3 @@
+s = "Riemann"
+fol = 5
+print(s[fol / 2])

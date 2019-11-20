@@ -1,0 +1,4 @@
+s = "hi!"
+len = length(s)
+for(i = 0; i < 6; i = i + 1)
+   print(s[i % len])

@@ -1,0 +1,184 @@
+\begin{exercise}
+\GetTranslation{provide-truth}
+
+\begin{sltasks}[counter-format=2.tsk[1],resume=true](2)
+  % \task
+  % \begin{items}
+  % \end{items}
+  % \task
+  % \begin{items}
+  % \end{items}
+  \task
+  \begin{items}
+    \item \texttt{ true \&\& 2 >= 2 }
+    \item \texttt{ 1 >= 1.0 \&\& true }
+    \item \texttt{ 2 >= 2 \&\& false }
+    \item \texttt{ true \&\& 3 <= 1 }
+    \item \texttt{ 2 >= 3 \&\& false }
+  \end{items}
+  \task
+  \begin{items}
+    \item \texttt{ false || 3 >= 2 }
+    \item \texttt{ 0.5 == 1.5 || true }
+    \item \texttt{ 2 <= 1.5 || false }
+    \item \texttt{ 1 <= 1.0 || true }
+    \item \texttt{ 0.5 == 1.5 || true }
+  \end{items}
+  % \task
+  % \begin{items}
+  %   \item \texttt{ !(true) }
+  %   \item \texttt{ !(false) }
+  %   \item \texttt{ !(true || false) }
+  %   \item \texttt{ !(true \&\& false) }
+  % \end{items}
+  \task
+  \begin{items}
+    \item \texttt{ false \&\& !(1.5 == 0.5) }
+    \item \texttt{ true \&\& !(1 <= 1.5) }
+    \item \texttt{ !(1.0 <= 1.0) || true }
+    \item \texttt{ !(1 >= 1) || true }
+    \item \texttt{ false || !(1 <= 3) }
+  \end{items}
+  \task
+  \begin{items}
+    \item \texttt{ 1 >= 3 || !(0.5 == 0.5) }
+    \item \texttt{ 2 >= 1.0 || 2 <= 1.5 }
+    \item \texttt{ 1.0 == 2 || 3 >= 1 }
+    \item \texttt{ 1.5 <= 2 || !(3 >= 1.5) }
+    \item \texttt{ 0.5 == 1.0 \&\& 1.0 >= 1.0 }
+  \end{items}
+  \task
+  \begin{items}
+    \item \texttt{ 1.0 <= 2 \&\& 1.0 <= 0.5 }
+    \item \texttt{ !(1 <= 1.0) \&\& 2 <= 3 }
+    \item \texttt{ 1.0 <= 2 \&\& 2 >= 0.5 }
+    \item \texttt{ !(3 == 1.0) || 2 >= 1 }
+    \item \texttt{ 3 >= 2 || 1.0 <= 3 }
+  \end{items}
+  \task
+  \begin{items}
+    \item \texttt{ 0.5 <= 2 || !(2 >= 0.5) }
+    \item \texttt{ 2 <= 1.5 \&\& 1 <= 3 }
+    \item \texttt{ 3 >= 0.5 || 1.0 >= 0.5 }
+    \item \texttt{ 1 <= 1.5 || 3 >= 1 }
+    \item \texttt{ !(1.5 == 3) || 1 <= 1 }
+  \end{items}
+  \task
+  \begin{items}
+    \item \texttt{ 3 >= 1 || 2 <= 1 }
+    \item \texttt{ 1 == 0.5 || 1.5 == 1.5 }
+    \item \texttt{ 2 <= 0.5 || 1.0 >= 1 }
+    \item \texttt{ 1.5 >= 3 \&\& !(3 <= 1.5) }
+    \item \texttt{ !(0.5 >= 0.5) || 3 <= 0.5 }
+  \end{items}
+  \task
+  \begin{items}
+    \item \texttt{ !(0.5 <= 2) \&\& 1.0 >= 0.5 }
+    \item \texttt{ 2 <= 1.5 \&\& 1.0 <= 3 }
+    \item \texttt{ 1.5 == 1 \&\& !(1.5 >= 3) }
+    \item \texttt{ !(0.5 >= 0.5) || 1 == 1.5 }
+    \item \texttt{ !(3 <= 1.5) || 2 >= 0.5 }
+  \end{items}
+  \task
+  \begin{items}
+    \item \texttt{ 3 >= 2 || 2 >= 1.0 }
+    \item \texttt{ 1.0 >= 1.0 || 1.0 >= 1.5 }
+    \item \texttt{ 1.5 >= 1.5 \&\& !(2 <= 3) }
+    \item \texttt{ !(1.0 == 3) || 3 >= 1.0 }
+    \item \texttt{ 1 >= 1.5 || 2 == 1.0 }
+  \end{items}
+  \task
+  \begin{items}
+    \item \texttt{ 2 <= 2 \&\& !(3 == 1) }
+    \item \texttt{ 3 >= 1.5 \&\& 1 >= 1 }
+    \item \texttt{ 1.0 <= 3 \&\& 3 >= 1.5 }
+    \item \texttt{ !(3 <= 1.0) \&\& 1.0 == 1.5 }
+    \item \texttt{ 1.5 >= 2 || 1.5 == 1 }
+  \end{items}
+\end{sltasks}
+\end{exercise}
+
+\begin{solution}
+\begin{sltasks}[counter-format=2.tsk[1],resume=true](5)
+  \task
+  \begin{items}
+    \item \texttt{ TRUE }
+    \item \texttt{ TRUE }
+    \item \texttt{ FALSE }
+    \item \texttt{ FALSE }
+    \item \texttt{ FALSE }
+  \end{items}
+  \task
+  \begin{items}
+    \item \texttt{ TRUE }
+    \item \texttt{ TRUE }
+    \item \texttt{ FALSE }
+    \item \texttt{ TRUE }
+    \item \texttt{ TRUE }
+  \end{items}
+  \task
+  \begin{items}
+    \item \texttt{ FALSE }
+    \item \texttt{ FALSE }
+    \item \texttt{ TRUE }
+    \item \texttt{ TRUE }
+    \item \texttt{ FALSE }
+  \end{items}
+  \task
+  \begin{items}
+    \item \texttt{ FALSE }
+    \item \texttt{ TRUE }
+    \item \texttt{ TRUE }
+    \item \texttt{ TRUE }
+    \item \texttt{ FALSE }
+  \end{items}
+  \task
+  \begin{items}
+    \item \texttt{ FALSE }
+    \item \texttt{ FALSE }
+    \item \texttt{ TRUE }
+    \item \texttt{ TRUE }
+    \item \texttt{ TRUE }
+  \end{items}
+  \task
+  \begin{items}
+    \item \texttt{ TRUE }
+    \item \texttt{ FALSE }
+    \item \texttt{ TRUE }
+    \item \texttt{ TRUE }
+    \item \texttt{ TRUE }
+  \end{items}
+  \task
+  \begin{items}
+    \item \texttt{ TRUE }
+    \item \texttt{ TRUE }
+    \item \texttt{ TRUE }
+    \item \texttt{ FALSE }
+    \item \texttt{ FALSE }
+  \end{items}
+  \task
+  \begin{items}
+    \item \texttt{ FALSE }
+    \item \texttt{ FALSE }
+    \item \texttt{ FALSE }
+    \item \texttt{ FALSE }
+    \item \texttt{ TRUE }
+  \end{items}
+  \task
+  \begin{items}
+    \item \texttt{ TRUE }
+    \item \texttt{ TRUE }
+    \item \texttt{ FALSE }
+    \item \texttt{ TRUE }
+    \item \texttt{ FALSE }
+  \end{items}
+  \task
+  \begin{items}
+    \item \texttt{ TRUE }
+    \item \texttt{ TRUE }
+    \item \texttt{ TRUE }
+    \item \texttt{ FALSE }
+    \item \texttt{ FALSE }
+  \end{items}
+\end{sltasks}
+\end{solution}

@@ -1,0 +1,3 @@
+s = "Hamilton"
+alb = length(s) - 1
+print(s[alb * 2])

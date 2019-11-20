@@ -1,0 +1,28 @@
+\paragraph{Globale variabelen}
+
+Variabelen die al bestaan kan je ook gebruiken binnen functies. Deze variabelen noemen we \emph{globale variabelen}. De waarde van de variabele binnen de functie is afhankelijk van wanneer de functie wordt aangeroepen. Kijk bijvoorbeeld eens naar het volgende stukje code:
+
+\begin{verbatim}
+word = "dolphin"
+void say():
+  print(word)
+say()
+word = "cat"
+say()
+\end{verbatim}
+
+Dit stukje code print eerst \texttt{dolphin} en daarna \texttt{cat}. Ten tijde van de eerste aanroep naar de functie \texttt{say} heeft de variabele \texttt{word} de waarde \texttt{"dolphin"}. Dus wordt er eerst \texttt{dolphin} geprint. Daarna heeft de variabele \texttt{word} de waarde \texttt{"cat"}. De tweede aanroep print daarom \texttt{cat}.
+
+\paragraph{Variabelen aanpassen} Een functie kan ook de variabelen buiten de functie aanpassen. Net zoals in dit stukje code:
+
+\begin{verbatim}
+number = 0
+void increment():
+  number += 1
+increment()
+increment()
+increment()
+print(number)
+\end{verbatim}
+
+Het bovenstaande stukje code print de waarde \texttt{3}, want na het driemaal aanroepen van de functie \texttt{increment} is de waarde van \texttt{number} verhoogd naar 3.

@@ -1,0 +1,7 @@
+s1 = "asedm"
+s2 = "!artm"
+i = 0
+while(i < 5)
+   print(s1[i])
+   print(s2[5 - i])
+   i = i + 1

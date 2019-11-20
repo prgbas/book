@@ -1,0 +1,3 @@
+s = "von Neumann"
+x = 5
+print(s[x])

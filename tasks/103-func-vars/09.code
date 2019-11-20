@@ -1,0 +1,5 @@
+x = "fly"
+var2 = "skip"
+void shout(var1, var2):
+   print(var1 + var2)
+shout(x, "jump")

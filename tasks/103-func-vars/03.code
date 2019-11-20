@@ -1,0 +1,4 @@
+var = "bear"
+void una(var):
+   print(var)
+una(var)

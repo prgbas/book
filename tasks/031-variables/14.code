@@ -1,0 +1,6 @@
+kaw = 2 * 1
+kaw = 1.5 * 1.0
+zan = kaw / 2
+zan = kaw * 1
+kaw = 3 + 0.5
+kaw = zan / 1.5

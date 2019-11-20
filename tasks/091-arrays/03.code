@@ -1,0 +1,2 @@
+bol = ['x', 'b', 'g']
+print(bol[0])

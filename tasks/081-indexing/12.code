@@ -1,0 +1,3 @@
+s = "Laplace"
+dal = 2
+print(s[5 / dal + 1])

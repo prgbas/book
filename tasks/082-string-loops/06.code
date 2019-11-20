@@ -1,0 +1,4 @@
+s = "!yenskle!s"
+l = length(s)
+for(i = 1; i < l; i = i * 2)
+   print(s[i])

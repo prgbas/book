@@ -1,0 +1,9 @@
+\paragraph{Kommagetallen}
+
+Een soort getal dat we bij programmeren tegenkomen is het kommagetal of \emph{floating point number}, of \texttt{float} in het kort. Zulke getallen werken zoals je kent uit de wiskunde: zo geeft \texttt{1.0\,/\,2.0} gewoon \texttt{0.5}.
+
+\paragraph{Automatische conversie}
+
+Je kunt floats en integers ook door elkaar gebruiken. Zodra het nodig is, vindt automatische conversie plaats. Als bij een operatie sprake is van minstens \'{e}\'{e}n \texttt{float}, dan wordt gerekend met \texttt{float}s en is de uitkomst ook een \texttt{float}.
+
+Let wel op de prioriteitsregels: zo geeft \texttt{3\,/\,2\,+\,0.25} de uitkomst \texttt{1.25}. Eerst wordt namelijk \texttt{3\,/\,2} uitgevoerd, en dat geeft als antwoord de integer \texttt{1}. Dan moeten \texttt{1} en \texttt{0.25} worden opgeteld. Nu vindt automatische conversie plaats, waardoor het antwoord \texttt{1.25} is.

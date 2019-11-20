@@ -1,0 +1,5 @@
+s = "Hello, world!"
+i = length(s) - 1
+while(i >= 0)
+   print(s[i])
+   i = i - 1

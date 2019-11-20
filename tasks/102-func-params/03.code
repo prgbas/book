@@ -1,0 +1,3 @@
+void eau(x, y):
+   print(x / y)
+eau(10, 12)

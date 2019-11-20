@@ -1,0 +1,5 @@
+void baz():
+   print("jump")
+void foo():
+   print("bicycle")
+baz()

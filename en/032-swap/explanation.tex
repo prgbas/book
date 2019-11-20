@@ -1,0 +1,44 @@
+\paragraph{Verwisseling}
+Laten we eens kijken hoe we een stel toekenningen kunnen gebruiken om een algoritme te maken. Stel dat we twee variabelen hebben:
+
+\vspace*{-\baselineskip}\begin{center}
+\texttt{a = 54} \quad en \quad \texttt{b = 29}
+\end{center}\vspace*{-\baselineskip}
+
+waarvan we de waarden willen verwisselen. Als je dit wil oplossen door iedere waarde aan de \emph{andere} variabele toe te kennen, zou je het volgende algoritme kunnen voorstellen:
+
+\begin{tracelist}
+a = b \\
+b = a
+\end{tracelist}
+
+Laten we de werking van dit algoritme traceren. We beginnen met de twee startwaarden, en laten dan \emph{per regel code} zien wat het effect is op onze variabelen. We laten met een kader steeds zien welke variabele wordt bijgewerkt op welke regel.
+
+\begin{tracelist}[l|cc]
+      &         a &         b \\
+      &        54 &        29 \\
+a = b & \fbox{29} &        29 \\
+b = a &        29 &  \fbox{29}
+\end{tracelist}
+
+Let op dat dit niet het gewenste eindresultaat is! Op de derde regel willen we de waarde van \texttt{a} ook in \texttt{b} opslaan, maar de oorspronkelijke waarde is op dat moment al overschreven.
+
+Uit de probleemanalyse kunnen we al een beetje afleiden wat de oplossing moet zijn: we moeten er voor zorgen dat op regel 3 de oorspronkelijke waarde van \texttt{a} nog beschikbaar is. We kunnen dat doen door een extra variabele te introduceren, puur voor dat doel. We slaan daarmee de waarde van \texttt{a} alvast op, v\'{o}\'{o}r deze wordt overschreven:
+
+\begin{tracelist}
+t = a \\
+a = b \\
+b = t
+\end{tracelist}
+
+Als we nu het hele programma uitschrijven en weer traceren, dan ziet het er zo uit:
+
+\begin{tracelist}[l|ccc]
+      &         a &         b &         t \\
+      &        54 &        29 &           \\
+t = a &        54 &        29 & \fbox{54} \\
+a = b & \fbox{29} &        29 &        54 \\
+b = t &        29 & \fbox{54} &        54 \\
+\end{tracelist}
+
+Dit is het gewenste eindresultaat!

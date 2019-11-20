@@ -1,0 +1,4 @@
+getal = 1
+for(i = 0; i < 7; i++)
+   print(getal)
+   getal = getal * 3

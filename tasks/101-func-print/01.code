@@ -1,0 +1,3 @@
+void baz():
+   print("fly")
+baz()

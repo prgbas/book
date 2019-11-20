@@ -1,0 +1,72 @@
+\paragraph{Standaard-reeksen}
+
+De volgende reeks is niet zomaar af te leiden uit de reeksen in het vorige hoofdstuk:
+
+\texttt{1 2 4 8 16 32 ...}
+
+
+
+% . Zo'n reeks zou je in theorie kunnen uitdrukken met de volgende loop:
+%
+% \begin{verbatim}
+% for(i = 0; i < 10; i++)
+%     print(2 macht i)
+% \end{verbatim}
+%
+% Het probleem is dat veel programmeertalen niet zomaar een operatie voor machtsverheffen kennen; machtsverheffen kost namelijk veel tijd in verhouding tot bijvoorbeeld vermenigvuldigen en optellen. Als het even kan wil je die vermijden.
+
+Elk getal van de reeks is het voorgaande getal, keer 2. Om de reeks te genereren, introduceren we daarom een aparte variabele \texttt{getal}, waarin we de tussenstand van de berekening bijhouden. De tussenstand vermenigvuldigen we steeds met 2, en dan printen we het resultaat:
+
+\begin{verbatim}
+getal = 1
+for(i = 0; i < 10; i++)
+    print(getal)
+    getal = getal * 2
+\end{verbatim}
+
+Vergeet niet je uitwerkingen te traceren.
+
+% We kunnen weer hetzelfde framework gebruiken voor deze reeks:
+
+% \begin{verbatim}
+% 1 for(i = 0; i < 10; i++)
+% 2     getal = ???
+% 3     print(getal)
+% \end{verbatim}
+%
+%
+% Om te weten wat \texttt{getal} zou moeten zijn kunnen we weer naar de trace voor dit algoritme kijken:
+%
+% \setlength{\tabcolsep}{2.5pt}
+% \begin{tracelist-left}[l|cccccccccccccccccclc]
+% regel & \texttt{1i} & \texttt{1c} & \texttt{2} & \texttt{3} & \texttt{1u} & \texttt{1c}
+%                                   & \texttt{2} & \texttt{3} & \texttt{1u} & \texttt{1c}
+%                                   & \texttt{2} & \texttt{3} & \texttt{1u} & \texttt{1c}
+%                                   & \texttt{2} & \texttt{3} & \texttt{1u} & \texttt{1c} & ... \\ \hline
+% var i & \fbox{\texttt{0}} & \texttt{0} & \texttt{0} & \texttt{0} &  \fbox{\texttt{1}} & \texttt{1}
+%                                   & \texttt{1} & \texttt{1} & \fbox{\texttt{2}} & \texttt{2}
+%                                   & \texttt{2} & \texttt{2} & \fbox{\texttt{3}} & \texttt{3}
+%                                   & \texttt{3} & \texttt{3} & \fbox{\texttt{4}} & \texttt{4} & ...\\
+% var getal &  &  & \fbox{\texttt{1}} & \texttt{1} & \texttt{1} & \texttt{1}
+%                 & \fbox{\texttt{2}} & \texttt{2} & \texttt{2} & \texttt{2}
+%                 & \fbox{\texttt{4}} & \texttt{4} & \texttt{4} & \texttt{4}
+%                 & \fbox{\texttt{8}} & \texttt{8} & \texttt{8} & \texttt{8} & ... \\
+% print &  &  &  & \texttt{1} & &
+%             & & \texttt{2} & &
+%             & & \texttt{4} & &
+%             & & \texttt{8} & & & ...
+% \end{tracelist-left}
+% \setlength{\tabcolsep}{6pt}
+%
+% Het probleem is hier dat het verband tussen \texttt{getal} en \texttt{i} niet zo eenvoudig is als we bij eerdere reeksen hebben gezien: \texttt{getal = (i + 1)}$^2$. Hiervoor is dus machtsverheffing nodig. Op zich geen probleem, we zouden het algoritme met machtsverheffing correct kunnen uitwerken. Maar, het is een operatie die niet standaard aanwezig is in alle programmeertalen, en nodeloos complex in dit geval.
+%
+% Er is een makkelijkere manier om deze reeks te genereren. Als je nog eens kijkt naar de reeks, zie je dat \texttt{getal} begint op \texttt{1} en vervolgens elke stap verdubbelt. In plaats van \texttt{getal} afhankelijk te maken van \texttt{i} kunnen we dit patroon makkelijker repliceren door \texttt{getal} afhankelijk te maken van zichzelf:
+
+% \begin{verbatim}
+% 1  getal = 1
+% 2 for(i = 0; i < 10; i++)
+% 3     getal = getal * 2
+% 4     print(getal)
+% \end{verbatim}
+%
+% Zoals altijd met programmeren zijn er altijd vele oplossingen voor het zelfde probleem. Het is dan ook niet zo dat het bovenstaande algoritme de enige oplossing is voor de gegeven reeks. Je zou prima een hele ander oplossing kunnen vinden die net zo goed is. De gegeven algoritmen zijn dan ook niets meer dan suggesties. Probeer altijd zelf na te denken wat een handige oplossing zou kunnen zijn voor een gegeven probleem.

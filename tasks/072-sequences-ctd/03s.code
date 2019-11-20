@@ -1,0 +1,4 @@
+getal = 2
+for(i = 0; i < 10; i++)
+   print(getal)
+   getal = getal + 2

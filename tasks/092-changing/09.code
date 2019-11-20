@@ -1,0 +1,3 @@
+yoyo = [2.0, 1.5, 1.0]
+yoyo[0] = yoyo[1]
+yoyo[1] = yoyo[2]
