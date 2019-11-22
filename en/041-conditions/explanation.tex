@@ -1,6 +1,6 @@
-\paragraph{Voorwaardelijke opdrachten}
+\paragraph{Conditional statements}
 
-Het volgende stukje code bevat een voorwaardelijke opdracht, beginnend met \texttt{if}. Er is een voorwaarde of \emph{condition}, namelijk \texttt{a < 10}. De instructie op de volgende regel is extra ge\"{i}ndenteerd, waarmee we aangeven dat deze \emph{afhankelijk} is van de \texttt{if}.
+The following code fragment contains a conditional statement, which starts with the keyword \texttt{if}. There is a requirement, or \emph{condition}, which is \texttt{a < 10}. The statement on the following line has been indented (moved to the right) which will show that the statement is dependent on the \texttt{if}.
 
 \begin{verbatim}
 1  a = 0
@@ -9,22 +9,23 @@ Het volgende stukje code bevat een voorwaardelijke opdracht, beginnend met \text
 4  a = a - 1
 \end{verbatim}
 
-In dit geval start het programma met de waarde \texttt{a = 0}. Dus wordt aan de voorwaarde \texttt{a < 10} voldaan op het moment dat deze wordt gecontroleerd. Het gevolg is dat de instructie \texttt{a = a + 10} uitgevoerd. De laatste regel staat weer helemaal links en is dus g\'{e}\'{e}n onderdeel van de voorwaardelijke instructie: deze instructie wordt uitgevoerd onafhankelijk van de \texttt{if}. Dat betekent dat het programma eindigt met de waarde \texttt{a = 9}.
+We start the program on line 1 with the value \texttt{a = 0}. This means that on line 2, the condition \texttt{a < 10} has indeed been met. The result is that the instruction \texttt{a = a + 10} will be executed too. Line 4 is printed all the way to the left, which means that it is not a part of the conditional statement: it will be executed regardless. This means that the program finishes with the variable \texttt{a} having a value \texttt{9}.
 
-\paragraph{Traceren}
+\paragraph{Tracing}
 
-We kunnen hier, net als in het vorige hoofdstuk, de toestand van de variabelen traceren. Voor het bovenstaande stukje code ziet de trace er als volgt uit:
+Like in the previous chapter we can trace the state of the variables. A trace for the previous code fragment looks like this:
 
 \begin{tracelist-left}[l|cccc]
-regel & 1 & \texttt{2} & \texttt{3} & \texttt{4} \\
+  & 1 & \texttt{2} & \texttt{3} & \texttt{4} \\
 \hline
 a & \fbox{0} & 0 & \fbox{10} & \fbox{9}
 \end{tracelist-left}
 
-In de eerste rij zie je de regelnummers uit het programma. In de rij eronder \emph{traceren} we de waarde van de variabele \texttt{a}. Op drie plekken is de waarde van \texttt{a} omkaderd: op deze regels wordt inhoud van de variabele gewijzigd.
+In the top row we print the program's line numbers. In the row below, we keep track of the variable \texttt{a}. In exactly three places, the value of \texttt{a} has a box: these are the lines where the value of the variable changed while tracing.
 
-\paragraph{Niet waar}
-In het fragment hieronder hebben we de voorwaarde aangepast. Op moment van evalueren van de voorwaarde blijkt dat hier niet aan is voldaan. Daarom wordt de volgende regel overgeslagen. Het programma eindigt dus met \texttt{a = -1}.
+\paragraph{Failing condition}
+
+In the code fragment below, we slightly changed the condition. In this case, at the moment of evaluating the condition, it yields \texttt{false}. Because the condition has not been met, the dependent line will be skipped. This means that the program finishes with the variable \texttt{a} having a value \texttt{-1}.
 
 \begin{verbatim}
 1  a = 0
@@ -33,9 +34,9 @@ In het fragment hieronder hebben we de voorwaarde aangepast. Op moment van evalu
 4  a = a - 1
 \end{verbatim}
 
-De trace ziet er dan zo uit:
+And the trace:
 
 \begin{tracelist-left}[l|ccccccc]
-regel & \texttt{1} & \texttt{2} &  \texttt{4} \\ \hline
+  & \texttt{1} & \texttt{2} &  \texttt{4} \\ \hline
 \texttt{a} & \fbox{\texttt{0}} & \texttt{0} & \fbox{\texttt{-1}}
 \end{tracelist-left}

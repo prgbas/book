@@ -36,7 +36,7 @@
 %
 % basic typography setup
 %
-\setlength{\parskip}{2ex plus 0.5ex minus 0.2ex}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
 \setlength{\parindent}{0pt}
 \fvset{xleftmargin=0pt}
 
@@ -56,12 +56,12 @@
 % table-ish display of code for tracing instructions
 %
 \newenvironment{tracelist}[1][l]{%
-  \vspace*{-\baselineskip}\begin{center}%[htb!]
+  \vspace*{-.5\baselineskip}\begin{center}%[htb!]
     \ttfamily
     \centering
     \begin{tabular}{#1}}{%
     \end{tabular}
-  \end{center}\vspace*{-\baselineskip}}
+  \end{center}\vspace*{-.5\baselineskip}}
 
 \newenvironment{tracelist-left}[1][l]{
     \ttfamily

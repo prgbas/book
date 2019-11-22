@@ -1,11 +1,15 @@
-\paragraph{Logische operaties}
+\paragraph{Logic operations}
 
-Het is mogelijk om de waarden \texttt{true} en \texttt{false} te combineren tot meer complexe logische expressies. Zo zijn er de logische operaties \texttt{\&\&} (and) en \texttt{||} (or). Dit zijn de zogeheten waarheidstabellen voor deze operaties:
+The values \texttt{true} and \texttt{false}, or any boolean expressions, may be combined into more complex expressions using logic operations. We introduce three.
+
+\paragraph{And}
+
+This operation, written as \texttt{\&\&}, requires both operands (TODO) to be \texttt{true} in order to yield \texttt{true} itself. The behavior of the operator can be described using a truth table:
 
 \begin{center}
   \ttfamily
   \begin{tabular}{r@{ \&\& }l@{\qquad}l}
-    \multicolumn{2}{l}{\normalfont expressie} & {\normalfont geeft} \\
+    \multicolumn{2}{l}{\normalfont expression} & {\normalfont yields} \\
     \midrule
     true & true   & true \\
     true & false & false \\
@@ -13,9 +17,16 @@ Het is mogelijk om de waarden \texttt{true} en \texttt{false} te combineren tot 
     false & false  & false \\
     \midrule
   \end{tabular}
-  \qquad
+\end{center}
+
+\paragraph{Or}
+
+This operation is written as \texttt{||}, and requires only one of the operands to be \texttt{true} in order to yield \texttt{true}. 
+
+\begin{center}
+  \ttfamily
   \begin{tabular}{r@{ || }l@{\qquad}l}
-    \multicolumn{2}{l}{\normalfont expressie} & {\normalfont geeft} \\
+    \multicolumn{2}{l}{\normalfont expression} & {\normalfont yields} \\
     \midrule
     true  & true   & true \\
     true  & false  & true \\
@@ -25,23 +36,36 @@ Het is mogelijk om de waarden \texttt{true} en \texttt{false} te combineren tot 
   \end{tabular}
 \end{center}
 
-\paragraph{Ontkenning}
+\paragraph{Not}
 
-De uitkomst van een bewering kan ook ``omgedraaid'' worden. Zet er dan \texttt{!} (not) voor:
+A boolean expression's value can be negated, which is expressed using an exclamation mark \texttt{!}.
 
 \begin{center}
-  \texttt{!true} \quad  geeft \quad  \texttt{false} \qquad  en \qquad  \texttt{!false} \quad geeft \quad \texttt{true}
+  \ttfamily
+  \begin{tabular}{l@{\qquad}l}
+    {\normalfont expression} & {\normalfont yields} \\
+    \midrule
+    !true   & false \\
+    !false  & true \\
+    \midrule
+  \end{tabular}
 \end{center}
 
-\paragraph{Prioriteitsregels}
+% \begin{center}
+%   \texttt{!true} \quad  yields \quad  \texttt{false} \qquad  en \qquad  \texttt{!false} \quad geeft \quad \texttt{true}
+% \end{center}
 
-Ook \texttt{\&\&} en \texttt{||} hebben hun plek in de prioriteitsregels:
+\paragraph{Precedence}
+
+The logic operations also have their place in the precedence hierarchy:
 
 \begin{enumerate}
-  \item eerst de expressies tussen haakjes
-  \item dan rekenkundige operaties zoals \texttt{+} en \texttt{*}
-  \item dan beweringen zoals \texttt{>}, \texttt{<}, \texttt{==}, \texttt{!=}, \texttt{>=}, \texttt{<=}
-  \item \texttt{!}
-  \item \texttt{||}
-  \item \texttt{\&\&}
+  \item first, expressions in parentheses
+  \item then arithmetic operations like \texttt{+} en \texttt{*}
+  \item then boolean operations like \texttt{>}, \texttt{<}, \texttt{==}, \texttt{!=}, \texttt{>=}, \texttt{<=}
+  \item then \texttt{!}
+  \item then \texttt{||}
+  \item and finally \texttt{\&\&}
 \end{enumerate}
+
+(Note that unlike \texttt{*} and \texttt{/}, the \textbf{and} and \textbf{or} operations are not in the same group.)

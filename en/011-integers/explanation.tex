@@ -1,11 +1,11 @@
-\paragraph{Uitdrukkingen}
+\paragraph{Expressions}
 
-Een uitdrukking of expressie is een combinatie van getallen en operaties. Zo'n expressie kan door een computer ge\"{e}valueerd worden volgens de wiskundige regels die je al kent. Bijvoorbeeld:
+An expression is a combination of numbers and operations. Such an expression may be \emph{evaluated} using the mathematical rules that you may already know. For example:
 
 \begin{center}
   \ttfamily
   \begin{tabular}{l@{\qquad}l}
-    {\normalfont expressie} & {\normalfont geeft} \\
+    {\normalfont expression} & {\normalfont evaluates to} \\
     \midrule
     4 & 4 \\
     5  & 5 \\
@@ -15,11 +15,11 @@ Een uitdrukking of expressie is een combinatie van getallen en operaties. Zo'n e
   \end{tabular}
 \end{center}
 
-Hieronder en op de volgende pagina's behandelen we een aantal uitzonderingen en bijzonderheden die een rol spelen bij het rekenen met behulp van de computer.
+Next to the more familiar operations we will explain several exceptions and particulars that come into play when doing calculations using a computer.
 
-\paragraph{Delen met gehele getallen}
+\paragraph{Integer division}
 
-In computers zijn \emph{integers}, ofwel gehele getallen, iets anders dan \emph{floats}, ofwel kommagetallen. In de meeste situaties werken ze hetzelfde, maar er zijn ook verschillen. Het eerste verschil is delen: de uitdrukking \texttt{1\,/\,2} geeft de verrassende uitkomst \texttt{0}. Dat komt doordat een deling met gehele getallen de volgende vraag beantwoordt: \emph{hoe vaak past 2 in het getal 1}? Zie hier een voorbeeld voor \texttt{x\,/\,3}:
+Computers treat \emph{integers}, or whole numbers, differently from \emph{floats}, numbers with a decimal point. In most situations you can expect similar results, but there are some differences. The first difference is division: the expression \texttt{1\,/\,2} surprisingly evaluates to \texttt{0}. This is because division of two integers is interpreted as asking the following question: \emph{how often does the number 2 fit into the number 1}? In the following table, we list the results of dividing some numbers by 3.
 
 \begin{center}
   \begin{tabular}{ c @{\hspace{25pt}} l l l l l l l l }
@@ -30,7 +30,7 @@ In computers zijn \emph{integers}, ofwel gehele getallen, iets anders dan \emph{
 
 \paragraph{Modulo}
 
-Een operatie die je misschien niet kent is \texttt{\%}, ofwel modulo. Deze operatie past precies bij delen met gehele getallen; \texttt{5\,\%\,2} moet de vraag beantwoorden: \emph{2 past 2 keer in 5, hoeveel blijft er dan over}? In dit geval blijft er \texttt{1} over. We geven hetzelfde voorbeeld als hierboven, voor \texttt{x\,\%\,3}:
+An operation that you might not know is modulo, often written as \texttt{\%}. This operation nicely complements the integer division; for example, in the case of an expression like \texttt{5\,\%\,2}, we should answer the following question: \emph{2 fits 2 times into 5, how much is then left}? The answer is \texttt{1}. In the following table, we list the the results of performing a modulo 3 for some numbers. When you compare it to the previous table, you should see that it does indeed list what is ``left'' after performing an integer division.
 
 \begin{center}
   \begin{tabular}{ c @{\hspace{25pt}} l l l l l l l l }
@@ -39,6 +39,6 @@ Een operatie die je misschien niet kent is \texttt{\%}, ofwel modulo. Deze opera
   \end{tabular}
 \end{center}
 
-\paragraph{Deelbaarheid}
+\paragraph{Divisibility}
 
-Een getal noemen we \emph{deelbaar} door een ander getal als de uitkomst van de modulo \texttt{0} is, ofwel: er blijft niks over bij deling.
+We call an integer \emph{divisible} by another integer if the result of taking the modulo is \texttt{0}, or in other words: if nothing is left after the division.

@@ -1,9 +1,9 @@
-\paragraph{Kommagetallen}
+\paragraph{Floats}
 
-Een soort getal dat we bij programmeren tegenkomen is het kommagetal of \emph{floating point number}, of \texttt{float} in het kort. Zulke getallen werken zoals je kent uit de wiskunde: zo geeft \texttt{1.0\,/\,2.0} gewoon \texttt{0.5}.
+Numbers with a decimal point, or \emph{floating point numbers}, generally work as you would expect from mathematics. Notably, dividing floats like \texttt{1.0\,/\,2.0} gives \texttt{0.5}.
 
-\paragraph{Automatische conversie}
+\paragraph{Automatic conversion}
 
-Je kunt floats en integers ook door elkaar gebruiken. Zodra het nodig is, vindt automatische conversie plaats. Als bij een operatie sprake is van minstens \'{e}\'{e}n \texttt{float}, dan wordt gerekend met \texttt{float}s en is de uitkomst ook een \texttt{float}.
+In expressions you may encounter combinations of floats and integers. This requires a decision as to what rule to apply. Often, this is solved by doing automatic conversion: if only a single float is involved, the other number (an integer) will be converted to a float, too. The result of the operation will then also be a float.
 
-Let wel op de prioriteitsregels: zo geeft \texttt{3\,/\,2\,+\,0.25} de uitkomst \texttt{1.25}. Eerst wordt namelijk \texttt{3\,/\,2} uitgevoerd, en dat geeft als antwoord de integer \texttt{1}. Dan moeten \texttt{1} en \texttt{0.25} worden opgeteld. Nu vindt automatische conversie plaats, waardoor het antwoord \texttt{1.25} is.
+Note that precedence rules still define what happens first: the expression \texttt{3\,/\,2\,+\,0.25} evaluates to \texttt{1.25}. First, the subexpression \texttt{3\,/\,2} is evaluated, giving the integer \texttt{1}. Then, \texttt{1} and \texttt{0.25} are to be added. Only then does the automatic conversion kick in, making the result a float: \texttt{1.25}.

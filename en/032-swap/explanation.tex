@@ -1,18 +1,21 @@
-\paragraph{Verwisseling}
-Laten we eens kijken hoe we een stel toekenningen kunnen gebruiken om een algoritme te maken. Stel dat we twee variabelen hebben:
+\paragraph{Swapping the values of variables}
 
-\vspace*{-\baselineskip}\begin{center}
-\texttt{a = 54} \quad en \quad \texttt{b = 29}
-\end{center}\vspace*{-\baselineskip}
+We will now see how to combine a number of assignments to develop an \emph{algorithm}. An algorithm is a general procedure that a computer can execute. It is general because it uses a number of variables that may be assigned numbers or other data depending on the situation.
 
-waarvan we de waarden willen verwisselen. Als je dit wil oplossen door iedere waarde aan de \emph{andere} variabele toe te kennen, zou je het volgende algoritme kunnen voorstellen:
+Let's develop an algorithm to swap the values of \underline{two} variables,
+
+\vspace*{-.5\baselineskip}\begin{center}
+\texttt{a = 54} \quad and \quad \texttt{b = 29}.
+\end{center}\vspace*{-.5\baselineskip}
+
+As a first intuition, you might think to assign the value of \texttt{b} to \texttt{a}, and the value of \texttt{a} to \texttt{b}. An algorithm might then look like this:
 
 \begin{tracelist}
 a = b \\
 b = a
 \end{tracelist}
 
-Laten we de werking van dit algoritme traceren. We beginnen met de twee startwaarden, en laten dan \emph{per regel code} zien wat het effect is op onze variabelen. We laten met een kader steeds zien welke variabele wordt bijgewerkt op welke regel.
+Let's trace the algorithm. We take two starting values for \texttt{a} and \texttt{b}, and then we show the effect on these two variables \emph{line by line}. Like in the previous section, we use a box to show which variable is \underline{changed} on which line of code.
 
 \begin{tracelist}[l|cc]
       &         a &         b \\
@@ -21,9 +24,9 @@ a = b & \fbox{29} &        29 \\
 b = a &        29 &  \fbox{29}
 \end{tracelist}
 
-Let op dat dit niet het gewenste eindresultaat is! Op de derde regel willen we de waarde van \texttt{a} ook in \texttt{b} opslaan, maar de oorspronkelijke waarde is op dat moment al overschreven.
+Now note that this is not the intended effect of the algorithm! Instead of swapping, the value of \texttt{a} is overwritten with \textbf{b}'s original value, and now both contain the same number. 
 
-Uit de probleemanalyse kunnen we al een beetje afleiden wat de oplossing moet zijn: we moeten er voor zorgen dat op regel 3 de oorspronkelijke waarde van \texttt{a} nog beschikbaar is. We kunnen dat doen door een extra variabele te introduceren, puur voor dat doel. We slaan daarmee de waarde van \texttt{a} alvast op, v\'{o}\'{o}r deze wordt overschreven:
+The problem is the following: on line three (TODO numbering), we would like to assign \texttt{b} the value of \texttt{a}, but at that point, \texttt{a} has already been overwritten. From this analysis we may have an intuition for a solution: we need to make sure that on line 3, the original value of \texttt{a} is still available. To do this, we need to introduce a third variable, which can ``save'' the value of \texttt{a} before it is overwritten.
 
 \begin{tracelist}
 t = a \\
@@ -31,7 +34,7 @@ a = b \\
 b = t
 \end{tracelist}
 
-Als we nu het hele programma uitschrijven en weer traceren, dan ziet het er zo uit:
+Tracing that modified program will look like this:
 
 \begin{tracelist}[l|ccc]
       &         a &         b &         t \\
@@ -41,4 +44,4 @@ a = b & \fbox{29} &        29 &        54 \\
 b = t &        29 & \fbox{54} &        54 \\
 \end{tracelist}
 
-Dit is het gewenste eindresultaat!
+Indeed, this is the expected result for swapping!

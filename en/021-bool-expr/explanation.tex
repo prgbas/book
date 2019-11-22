@@ -1,34 +1,33 @@
-\paragraph{Beweringen zijn waar of onwaar}
+\paragraph{Propositions are true or false}
 
-Van beweringen zoals \texttt{4\,==\,5} kunnen we bepalen of ze \emph{waar} zijn. Het getal \texttt{4} is niet gelijk aan \texttt{5}, dus de bewering is \emph{onwaar}. Er zijn zes belangrijke manieren om een bewering te doen:
+For propositions like \texttt{4\,==\,5} we can decide if they are \emph{true}. The number \texttt{4} does not equal \texttt{5}, which makes this proposition not true, or \emph{false}. There are six important ways to formulate a proposition:
 
 \begin{center}
 \begin{tabular}{ll}
-\textbf{operatie} &        \textbf{betekenis}\\
+\textbf{operator} &        \textbf{meaning}\\
 \midrule
-      \texttt{==} &               is gelijk aan\\
-      \texttt{!=} &          is niet gelijk aan\\
-       \texttt{<} &              is kleiner dan\\
-       \texttt{>} &               is groter dan\\
-      \texttt{<=} & is kleiner dan of gelijk aan\\
-      \texttt{>=} & is groter dan of gelijk aan\\
+      \texttt{==} &               equals\\
+      \texttt{!=} &          does not equal\\
+       \texttt{<} &              is smaller than\\
+       \texttt{>} &               is larger than\\
+      \texttt{<=} &  is smaller than or equal to\\
+      \texttt{>=} &  is larger than or equal to\\
 \midrule
 \end{tabular}
 \end{center}
 
-Uit al deze operaties kunnen twee waarden komen: \texttt{true} (waar) en \texttt{false} (onwaar). Deze waardes worden ook wel \emph{booleans} genoemd\footnote{Genoemd naar George Boole, die als eerste een algebraïsch systeem voor logica ontwikkelde halverwege de 19e eeuw.}. De operaties waaruit deze booleans komen, worden ook wel \emph{boolean expressions} genoemd.
+Each proposition formulated using one of these operators can evaluate to one of two values: \texttt{true} or \texttt{false}. These values are called \emph{booleans}\footnote{After George Boole, who appears to be the first to develop an algebraic system for logic in the 19th century.}. Expressions that evaluate to \texttt{true} or \texttt{false} are called \emph{boolean expressions}.
 
-\paragraph{Prioriteitsregels}
+\paragraph{Precedence rules}
 
-Net als bij rekenkundige operaties gelden prioriteitsregels bij het evalueren van beweringen:
+Like with arithmetic operations, propositional operations are subject to rules of precedence.
 
 \begin{enumerate}
-  \item eerst de expressies tussen haakjes
-  \item dan rekenkundige operaties zoals \texttt{*} en \texttt{+} (let op de regels!)
-  \item dan \texttt{>}, \texttt{<}, \texttt{==}, \texttt{!=}, \texttt{>=}, \texttt{<=}
+    \item any parts of the expression contained between parentheses come first
+    \item then come the arithmetic operators \texttt{*} and \texttt{+} (note the rules that apply between those!)
+    \item and finally the operations \texttt{>}, \texttt{<}, \texttt{==}, \texttt{!=}, \texttt{>=}, \texttt{<=} will be performed
 \end{enumerate}
 
+\paragraph{Mixing floats and integers}
 
-\paragraph{Verschillende soorten getallen}
-
-Je vindt in beweringen zowel gehele getallen als floating-pointgetallen. Als een geheel getal wordt vergeleken met een floating-pointgetal, vindt automatische conversie plaats, waarbij van de \texttt{int} een \texttt{float} wordt gemaakt.
+Propositions can contain integers as well as floats. If an integer is compared to a floating point number, automatic conversion takes place, making the integer into a float.

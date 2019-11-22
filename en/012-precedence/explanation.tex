@@ -1,21 +1,23 @@
-\paragraph{Volgorde van operaties}
+\paragraph{Order of evaluation}
 
-In expressies met meer dan \'e\'en operatie wordt de volgorde belangrijk. Als het gaat om gelijksoortige rekenkundige operaties, bijvoorbeeld het drietal \texttt{*}, \texttt{/} en \texttt{\%}, dan worden de operaties van \emph{links naar rechts} ge\"evalueerd. Bijvoorbeeld:
+When expressions contain more than a single operator, the order of evaluation becomes important. We will formulate a few rules that define what comes first when evaluating such expressions.
+
+The main rule is that, when we are dealing with two operators of the same kind, the operations are performed \emph{left to right}. For example:
 
 \begin{equation*}
-\texttt{1\,/\,2\,/\,2} \qquad\text{geeft}\qquad \texttt{0\,/\,2} \qquad\text{geeft}\qquad \texttt{0}
+\texttt{1\,/\,2\,/\,2} \qquad\text{gives}\qquad \texttt{0\,/\,2} \qquad\text{gives}\qquad \texttt{0}
 \end{equation*}
 
-Als je deze expressie verkeerd om evalueert, dus van rechts naar links, dan komt er een heel ander antwoord uit, namelijk \texttt{1}. De volgorde is dus van belang.
+Should you evaluate this expression the other way around, so from right to left, you will see that this will give you a wholly different result: \texttt{1}. So, following these rules is important, especially when division or modulo are involved.
 
-\paragraph{Prioriteitsregels}
+\paragraph{Operator precedence}
 
-Daar waar ambigu\"iteit is over de volgorde van expressies, gelden prioriteitsregels:
+Programming languages define a list of precedence rules for operators, in order to leave no ambiguity as to the outcome of calculations. In most cases, the rules are the same as in modern mathematics. For now, we can define the following groups for basic calculations:
 
 \begin{enumerate}
-    \item deelexpressies tussen haakjes gaan v\'o\'or andere delen
-    \item daarna de rekenkundige bewerkingen \texttt{*}, \texttt{/} en \texttt{\%}
-    \item en dan volgen de bewerkingen \texttt{+} en \texttt{-}
+    \item any parts of the expression contained between parentheses come first
+    \item then come the arithmetic operators \texttt{*}, \texttt{/} and \texttt{\%}
+    \item and finally the operations \texttt{+} and \texttt{-} will be performed
 \end{enumerate}
 
-De prioriteit van de verschillende operaties hangt af van waar ze zich bevinden in deze array. Operaties van prioriteit 1 worden eerst uitgevoerd, en operaties van prioriteit 2 daarna. Als meerdere expressies dezelfde prioriteit hebben, hou je weer de van-links-naar-rechts-regel aan.
+This list does not define what you should do if you, for example, encounter an expression containing multiplication \texttt{*} and division \texttt{/}. In such a case, where two operators are from the same group, you should default to the from-left-to-right rule.
