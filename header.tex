@@ -55,6 +55,8 @@
 %
 % table-ish display of code for tracing instructions
 %
+% \renewcommand{\arraystretch}{1.4}
+
 \newenvironment{tracelist}[1][l]{%
   \vspace*{-.5\baselineskip}\begin{center}%[htb!]
     \ttfamily
@@ -81,8 +83,12 @@
 \NewFileListingCommand{\nlisting}{1}{\prelistingskip}%
     {\setcounter{lineno}{0}\listingfont}{\typesetnline}{\postlistingskip}
 
+\NewListingEnvironment{nnflisting}{0}{\prelistingskip\vskip2\parskip}%
+    {\setcounter{lineno}{0}\listingfont}{\typesetnline}{\postlistingskip\vskip2\parskip}
+
 \newcommand\prglisting[1]{\vtop{\vskip2\parskip\filelisting{#1}}}
 \newcommand\prnlisting[1]{\vtop{\vskip2\parskip\nlisting{#1}}}
+% \newcommand\prnlisting[1]{\vtop{\vskip2\parskip\nlisting{#1}}}
 \setlength{\listingskipamount}{0pt}
 \setlength{\listingindent}{0pt}
 
