@@ -1,26 +1,47 @@
-\paragraph{while-loops}
-In het volgende fragment wordt de waarde van een variabele veranderd door middel van een \emph{while-loop}:
+\paragraph{Looping}
 
-\begin{verbatim}
-1  a = 0
-2  while(a < 2)
-3      a = a + 1
-4  a = a / 2
-\end{verbatim}
+In the following fragment a variable is changed using a \texttt{while}-loop.
 
-Bij het uitvoeren van dit stuk code wordt eerst een variabele aangemaakt met de naam \texttt{a}, die op dat moment de waarde \texttt{0} krijgt toegekend. Op de regel daarna zien we de term \texttt{while}, met daarna tussen haakjes \texttt{(a < 2)}. De  term geeft aan dat we het hier over een \emph{while-loop} hebben. Het gedeelte tussen haakjes noemen we de \emph{conditie} (of een \emph{bewering}). Zolang de conditie \texttt{true} is, zal \emph{alle} code die \emph{binnen} de while-loop staat herhaald worden. Let dus op dat er ook meerdere regels code in de while-loop kunnen staan! De conditie wordt iedere keer maar \'e\'enmaal gecontroleerd: aan het begin van het codeblok dat binnen de while-loop wordt uitgevoerd.
+\begin{nnflisting}
+a = 0
+while(a < 2)
+    a = a + 1
+a = a / 2
+\end{nnflisting}
 
-\paragraph{Herhalende commando's traceren}
+On line 1, the variable \texttt{a} is initialized with the integer \texttt{0}. On the next line, we see the \texttt{while} keyword, and then between parentheses a condition \texttt{(a < 2)}. Now, \emph{as long as} the condition yields \texttt{true}, any statements within the loop will be repeated. In this case, only line 3 is in the loop, but more statements might be included. It's important to realize that the condition is evaluated \underline{once per loop}: on line 2, each time a decision is made if the loop can be executed again.
 
-Natuurlijk kunnen we de effecten van deze code, net als voor variabelen, traceren. Voor het stuk code dat hierboven staat ziet dat er als volgt uit:
+\paragraph{Tracing loops}
+
+Like with sequences of assignment statements, we can trace the execution of loops. The technique is a little bit different, because the loop may be executed multiple times. For the previous fragment, the trace looks like this:
 
 \begin{tracelist-left}[l|ccccccc]
 regel & \texttt{1} & \texttt{2} & \texttt{3} &  \texttt{2} &
                           \texttt{3} & \texttt{2} & \texttt{4} \\ \hline
+\\[-1em]
 var \texttt{a} & \fbox{\texttt{0}} & \texttt{0} & \fbox{\texttt{1}} & \texttt{1} & \fbox{\texttt{2}} & \texttt{2} & \fbox{\texttt{1}}\\
 a < 2 & & true &  & true &  & \fbox{false} &
 \end{tracelist-left}
 
-Bovenin de tabel staan de regelnummers die aangeven bij welke regel we op dat moment zijn. Onderin de tabel zetten we alle variabelen (in dit geval alleen \texttt{a}), met de waardes die ze hebben bij het respectievelijke regelnummer, en de conditie, met de uitkomst hiervan bij het respectievelijke regelnummer. Bij verandering zetten we een kader om de nieuwe waarde, en in de volgende kolommen nemen we alleen de waarde over. Bij het controleren van de conditie bekijken we het resultaat van de conditie (\texttt{true} of \texttt{false}).
+Atop the table are the line numbers for each line that we encounter, from left to right. Below that, we include lines for each variable or expression that we would like to trace. Like before, we write down a value for each variable as it is initialized, and we draw a box around each variable whenever it changes.
 
-Zoals je kan zien stopt het programma uiteindelijk met herhalen van de regels twee en drie. Dit gebeurt op regel twee wanneer de conditie \texttt{(a < 2)} niet meer waar is (\texttt{a} is namelijk \texttt{2}, en is dus niet meer kleiner dan \texttt{2}). De while-loop houdt dan op met herhalen, en de regel na de while-loop wordt uitgevoerd.
+We included the condition for the \texttt{while}-loop as part of the trace. We only write the condition on line 2, because it is only calculated and checked on that line. The condition yields a boolean value, so the possible values are \texttt{true} and \texttt{false}.
+
+In this case, the condition is checked three times. The first two times it yields \texttt{true}, so line 3 is run right after. The third time it yields \texttt{false}, after which the rest of the program is run --- in this case only line 4.
+
+% TODO infinite loops would be nice to illustrate the condition check
+
+% \paragraph{Infinite loops}
+%
+% A condition is usually dependent on the value of one or more variables, like \texttt{a < 2}. To ensure that the loop will end at some point, that variable needs to be changed inside the loop. In the example above, we see that the variable is incremented by 1 each step, meaning that at some point the condition \texttt{a < 2} will not be true anymore.
+%
+% If the variable in the condition is not changed at all during the loop, the loop can either only run 0 times (if the condition is not met), or it would loop forever (if the condition is met). The simplest way to create an infinite loop is to specify an always-true condition:
+%
+% \begin{nnflisting}
+% a = 0
+% while(true)
+%     a = a + 1
+% a = a / 2
+% \end{nnflisting}
+%
+% In this case, the loop would be ``infinite'', and line 4 would never be reached.

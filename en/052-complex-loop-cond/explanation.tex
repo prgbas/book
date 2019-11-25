@@ -1,17 +1,18 @@
-\paragraph{Complexe condities}
-In de opgaven hiernaast gebruiken weer complexere voorwaarden, bestaande uit beweringen en logische combinaties. Hieronder sommen we de regels voor zulke samengestelde beweringen nog eens op.
+\paragraph{More complex conditions}
 
-\paragraph{Beweringen}
+In this paragraph we reintroduce more complex conditions that are combinations of propositions with logical connectors. Below you'll find a summary of the rules that apply.
+
+\paragraph{Propositions}
 \begin{center}
 \begin{tabular}{ll}
-\textbf{operatie} &        \textbf{betekenis}\\
+\textbf{operation} &        \textbf{meaning}\\
 \midrule
-      \texttt{==} &               is gelijk aan\\
-      \texttt{!=} &          is niet gelijk aan\\
-       \texttt{<} &              is kleiner dan\\
-       \texttt{>} &               is groter dan\\
-      \texttt{<=} & is kleiner dan of gelijk aan\\
-      \texttt{>=} & is groter dan of gelijk aan\\
+      \texttt{==} &               equals\\
+      \texttt{!=} &          does not equal\\
+       \texttt{<} &              is smaller than\\
+       \texttt{>} &               is larger than\\
+      \texttt{<=} &  is smaller than or equal to\\
+      \texttt{>=} &  is larger than or equal to\\
 \midrule
 \end{tabular}
 \end{center}
@@ -20,20 +21,20 @@ In de opgaven hiernaast gebruiken weer complexere voorwaarden, bestaande uit bew
 \begin{center}
   \ttfamily
   \begin{tabular}{r@{ \&\& }l@{\qquad}l}
-    \multicolumn{2}{l}{\normalfont expressie} & {\normalfont geeft} \\
+    \multicolumn{2}{l}{\normalfont expression} & {\normalfont yields} \\
     \midrule
-    true & false & false \\
     true & true   & true \\
+    true & false & false \\
     false & true  & false \\
     false & false  & false \\
     \midrule
   \end{tabular}
   \qquad
   \begin{tabular}{r@{ || }l@{\qquad}l}
-    \multicolumn{2}{l}{\normalfont expressie} & {\normalfont geeft} \\
+    \multicolumn{2}{l}{\normalfont expression} & {\normalfont yields} \\
     \midrule
-    true  & false  & true \\
     true  & true   & true \\
+    true  & false  & true \\
     false & true   & true \\
     false & false  & false \\
     \midrule
@@ -41,8 +42,16 @@ In de opgaven hiernaast gebruiken weer complexere voorwaarden, bestaande uit bew
 \end{center}
 
 \paragraph{Ontkenning}
+
 \begin{center}
-  \texttt{!true} \quad  geeft \quad  \texttt{false} \qquad  en \qquad  \texttt{!false} \quad geeft \quad \texttt{true}
+  \ttfamily
+  \begin{tabular}{l@{\qquad}l}
+    {\normalfont expression} & {\normalfont yields} \\
+    \midrule
+    !true   & false \\
+    !false  & true \\
+    \midrule
+  \end{tabular}
 \end{center}
 
-Vergeet bovendien niet de prioriteitsregels voor het rekenen.
+The rules of precedence also apply like earlier.
