@@ -1,33 +1,33 @@
 \paragraph{For-loops}
-Onderstaand codefragment print de getallen 0 t/m 9 met een \texttt{while}-loop.
+The code fragment below prints the numbers 0 to 9 using a \texttt{while}-loop.
 
-\begin{verbatim}
-1 i = 0
-2 while(i < 10)
-3     print(i)
-4     i++
-\end{verbatim}
+\begin{nnflisting}
+i = 0
+while(i < 10)
+    print(i)
+    i++
+\end{nnflisting}
 
-Zoals je misschien is opgevallen bevatten veel loop-constructies min of meer dezelfde ingredienten: Een \textbf{initialisatie} (\texttt{i = 0}), een \textbf{conditie} (\texttt{i < 10}), en een \textbf{update} (\texttt{i++}). Omdat dit patroon zo veel voorkomt, hebben de meeste programmeertalen hier een speciale constructie voor: de \texttt{for}-loop. Het onderstaande stukje code laat precies hetzelfde programma zien, maar dan geschreven als een \texttt{for}-loop.
+You might have noticed that many loops contain some of the same ingredients. In the program above, line 1 performs \textbf{initialization}, line 2 contains the \textbf{condition} that controls the loop, and line 4 is an \textbf{update} that ensures the loop steps towards the final goal. Because most loops comprise all three components, many programming languages have a special construct to do the same: the \emph{counting for-loop}. The fragment below shows the same program, but instead using a \texttt{for}-loop:
 
-\begin{verbatim}
-1 for(i = 0; i < 10; i++)
-2    print(i)
-\end{verbatim}
+\begin{nnflisting}
+for(i = 0; i < 10; i++)
+    print(i)
+\end{nnflisting}
 
-De \texttt{for}-loop bevat dezelfde drie ingredienten als de \texttt{while}-loop: De initialisatie (\texttt{i = 0}), de conditie (\texttt{i < 10}), en de update (\texttt{i++}). De initialisatie (\texttt{i = 0}), wordt alleen de eerste keer uitgevoerd. De conditie (\texttt{i < 10}) wordt elke keer voor het begin van de iteratie uitgevoerd. De update (\texttt{i++}) wordt elke keer \emph{aan het einde} van de iteratie uitgevoerd. Dus, de volgorde van executie in dit voorbeeld:
+The same three ingredients, initialization, condition and update, are present in the first line of the loop. By convention, the initialization (\texttt{i = 0}) is performed only once, at the loop's start. The condition (\texttt{i < 0}) is evaluated each time we restart at the top of the loop. The update (\texttt{i++}) is also performed each time, but only \emph{after} all statements in the loop have been performed. So in this example, the \emph{order of execution} is:
 
 \begin{itemize}
-\item regel 1, \texttt{i = 0} (initialisatie)
-\item regel 1, \texttt{i < 10} (conditie)
+\item regel 1, \texttt{i = 0} (initialization)
+\item regel 1, \texttt{i < 10} (condition)
 \item regel 2, \texttt{print(i)}
 \item regel 1, \texttt{i++} (update)
-\item regel 1, \texttt{i < 10} (conditie)
+\item regel 1, \texttt{i < 10} (condition)
 \item regel 2, \texttt{print(i)}
 \item etc.
 \end{itemize}
 
-Het lastige hierbij is dat regel 1 van de \texttt{for}-loop dus eigenlijk 3 verschillende commando's heeft, die ook op verschillende momenten worden uitgevoerd. De makkelijktse manier om te zien hoe een \texttt{for}-loop wordt uitgevoerd is door hem te vertalen naar een \texttt{while}-loop:
+Because the \texttt{for}-loop is a shorthand, it may not be immediately obvious which part is used at which moment. Another way of looking at it, is to put a \texttt{while}-loop and its \texttt{for}-counterpart next to each other:
 
 \begin{tabular}{lp{4em}l}
                                          && \tikzmark{i2}\verb|<init>| \\

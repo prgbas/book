@@ -1,15 +1,15 @@
-\paragraph{For-loops traceren}
+\paragraph{Tracing}
 
-In het volgende stuk code wordt de waarde van een variabele veranderd binnen een \texttt{for}-loop:
+In the following code fragment we use a \texttt{for}-loop to manipulate a variable called \texttt{a}.
 
-\begin{verbatim}
-1  a = -10
-2  for(i = 0; i < 2; i++)
-3      a = i * 2
-4  a = a + 6
-\end{verbatim}
+\begin{nnflisting}
+a = -10
+for(i = 0; i < 2; i++)
+    a = i * 2
+a = a + 6
+\end{nnflisting}
 
-Als we dit fragment willen traceren hebben we een probleem. Regel 2 bestaat eigenlijk uit meerdere opdrachten: initialisatie (\texttt{i = 0}), conditie (\texttt{i < 2}) en update (\texttt{i++}). We kunnen dit expliciet opnemen in de trace:
+As soon as we try to trace the loop using previous techniques, we realize that line 2 contains many parts that are actually performed at other points in the code. One way to perform the trace is to first translate the code into a \texttt{while}-loop, which is fine. We can also augment our tracing technique to accommodate \texttt{for}-loops. Let's make the initialization (\texttt{i = 0}), condition (\texttt{i < 2}) and update (\texttt{i++}) explicit in the trace:
 
 \setlength\tabcolsep{3pt}
 \begin{tracelist-left}[l|ccccccccccccc]
@@ -22,10 +22,11 @@ var \texttt{a} & \fbox{\texttt{-10}} & \texttt{-10} & \texttt{-10} & \fbox{\text
 \end{tracelist-left}
 \setlength{\tabcolsep}{6pt}
 
-We hebben in dit voorbeeld voor de duidelijkheid de betreffende commando's onder de labels van de \texttt{for}-loop gezet en de waarheidswaarden van conditie expliciet gemaakt. Je kan dit natuurlijk ook wat beknopter opschrijven:
+But once you are used to the form of the \texttt{for}-loop, you might reduce the trace again:
 
 \begin{tracelist-left}[l|ccccccccccccc]
 regel & \texttt{1} & \texttt{2} & \texttt{2} & \texttt{3} & \texttt{2} & \texttt{2} & \texttt{3} & \texttt{2} & \texttt{2} & \texttt{4} \\ \hline
 var \texttt{i} & & \fbox{\texttt{0}} & \texttt{0} & \texttt{0} & \fbox{\texttt{1}} & \texttt{1} & \texttt{1} & \fbox{\texttt{2}} & \texttt{2} & \\
 var \texttt{a} & \fbox{\texttt{-10}} & \texttt{-10} & \texttt{-10} & \fbox{\texttt{0}} & \texttt{0} & \texttt{0} & \fbox{\texttt{2}} & \texttt{2} & \texttt{2} & \fbox{\texttt{8}} \\
+\texttt{i < 2} & & & \texttt{true} & & & \texttt{true} & & & \fbox{\texttt{false}} & \\
 \end{tracelist-left}
