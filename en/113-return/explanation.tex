@@ -1,16 +1,19 @@
-\paragraph{Retourneren}
+\paragraph{Returning}
 
-\emph{Retourneren} is een ander woord voor \emph{teruggeven}. Het is mogelijk voor functies om een waarde terug te geven naar vanwaar de functie wordt uitgevoerd. Dit doe je met het commando \texttt{return}. De waarde die hier teruggegeven wordt noemen we ook wel het \emph{resultaat} van de functie. Het resultaat van de functie vervangt als het ware de functieaanroep zelf. Dit werkt net als het gebruik van variabelen; die worden vervangen door hun waardes.
+To \emph{return} means to transfer back some value from the function to where it was called. Most programming languages use the keyword \emph{return} for this. The value that is returned is sometimes called the \emph{result} of the function. In the code where the function is called, the function call might be replaced by its result, in the same way that we use concrete values each time we calculate using variables.
 
 \paragraph{Types}
-Helemaal in het begin van dit hoofdstuk lieten we het volgende zien:
+
+Right at the start of this chapter we showed the following prototype of a function definition:
 
 \begin{verbatim}
-<type> <naam van functie>():
-  <inhoud van functie>
+<type> <name of function>(<parameter list>):
+  <function body>
 \end{verbatim}
 
-Tot nog toe hebben we alleen \texttt{void} in de plaats van \texttt{<type>} gebruikt. \texttt{void} staat voor \texttt{niets} en dit betekent dat onze functie niets teruggeeft. Dan hoef je dus ook geen \texttt{return} commando te geven. Als je wel iets wil teruggeven moet je het specifieke \texttt{type} aanduiden. In onze voorbeelden zullen we alleen de types \texttt{int}, \texttt{float}, en \texttt{string} gebruiken.
+Up until now we have only used \texttt{void} for \texttt{<type>}. We can now define that \texttt{void} means that a function \emph{returns nothing}, meaning that the function will not contain a \texttt{return} statement.
+
+Now if we would like to have the function return something, we will specify as \texttt{<type>} what kind of value the function will be returning. In this book, we will use the type \texttt{int}, \texttt{float} and \texttt{string}.
 
 % \begin{figure}[h]
 % \begin{subfigure}[b]{.3\linewidth}
@@ -72,8 +75,8 @@ Tot nog toe hebben we alleen \texttt{void} in de plaats van \texttt{<type>} gebr
 % 2
 % \end{verbatim}
 
-\paragraph{Traceren}
+\paragraph{Tracing}
 
-Functies die iets uitrekenen traceren we op vrijwel dezelfde manier als voorheen. Daar komt bij dat er iets \emph{terug}gaat van de functie naar de startregel. In het volgende voorbeeld zie je dat de functie het getal 3 uitrekent en \texttt{return}t. Dit kunnen we uiteindelijk invullen in de \texttt{print}.
+Functions that calculate and return something can be traced much like before. We add a \emph{back substitution} that fills in the concrete result of the function into the place where it was called. Below, the function call \texttt{das(12)} returns the integer 3, and this is substituted into the \texttt{print} statement.
 
 \includegraphics[width=.7\textwidth]{6-trace-returns.jpeg}

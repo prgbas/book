@@ -1,28 +1,30 @@
-\paragraph{Herhaling en strings}
+\paragraph{Strings with loops}
 
-Je kan strings natuurlijk ook combineren met loops.
+By using loops we can extract information from strings. For example, we can write a loop that prints only some of the characters from a string:
 
-\begin{verbatim}
-1 s = "Hsopil"
-2 i = 0
-3 len = length(s)
-4 while(i < len)
-5     print(s[i])
-6     i = i + 2
-\end{verbatim}
+\begin{nnflisting}
+s = "Hsopil"
+i = 0
+len = length(s)
+while(i < len)
+    print(s[i])
+    i = i + 2
+\end{nnflisting}
 
-Op regel \texttt{3} wordt het commando \texttt{length} gebruikt om de lengte van de string \texttt{s} te bepalen (in dit geval 6). Vrijwel alle programmeertalen hebben zo een ingebouwde opdracht.
+On line \texttt{3} we use the \texttt{length} function to determine the size or length of a string \texttt{s} (the result is 6 in this case). Most programming languages have such a built-in command.
 
-Als we willen weten wat er geprint wordt tijdens het uitvoeren van deze code kunnen we, net als in eerdere hoofdstukken, een trace maken. Voor dat we dat doen, is het handig om eerste een tabel te maken met de indices van string \texttt{s}:
+As soon as we are going to trace a code fragment like the above, it is useful to annotate the positions in the string, because we will need to \emph{look up} the characters by position quite often.
 
 \begin{tabular}{l|ccccccccccccc}
 index&0&1&2&3&4&5\\ \hline
 karakter&H&s&o&p&i&l
 \end{tabular}
 
-\paragraph{Trace}
+\paragraph{Tracing}
 
-In de trace willen we bijhouden wat de waarde van de variabele \texttt{i} is en wat er geprint wordt. Voor het gemak houden we ook de waarde van \texttt{s[i]} bij. Om de trace een beetje compact te houden laten we de waardes van de variabelen \texttt{s = "Hsopil"} en \texttt{len = 6} buiten beschouwing. Deze veranderen toch niet gedurende de loop.
+The key parts to keep track of when tracing this code are the variable \texttt{i}, the character at position \texttt{i} in the string. We will also want to track the \emph{moments} that the print statement occurs, so we can eventually see what will be printed by the program.
+
+To keep the trace as small as possible, we will not note the values of the variables that do not change: the string \texttt{s} itself, and the length of the string, as stored in the variable \texttt{len}.
 
 \setlength\tabcolsep{5pt}
 \begin{tracelist-left}[l|cccccccccccccccccccccccccccccccccccccccc]
@@ -49,4 +51,4 @@ print          &&&&
 \end{tracelist-left}
 \setlength\tabcolsep{6pt}
 
-Deze code print dus de text \texttt{Hoi} naar het scherm.
+We can now conclude that the code will print the letters \texttt{Hoi} to our screens.

@@ -1,21 +1,21 @@
-\paragraph{Filter}
+\paragraph{Filtering}
 
-Neem de volgende reeks:
+Let's study this sequence:
 
 \begin{verbatim}
 * 2 4 * 8 10 * 14 16 * ...
 \end{verbatim}
 
-De reeks lijkt erg op de eenvoudige standaardreeks, maar elk getal dat deelbaar is door 3, is vervangen door een \texttt{*}. Om deze reeks te genereren, gebruiken we een \texttt{if}-\texttt{else}:
+It looks quite a bit like some of our earlier sequences. However, each number that is divisible by 3 is replaced by a \texttt{*}. To generate this sequence, we start from the code for a simpler sequence $0, 2, 4, 6, ...$, and introduce an \texttt{if}-\texttt{else} statement:
 
-\begin{verbatim}
+\begin{nnflisting}
 for(i = 0; i < 10; i++)
     getal = i * 2
     if(getal % 3 == 0)
         print("*")
     else
         print(getal)
-\end{verbatim}
+\end{nnflisting}
 
 
 % \paragraph{Weglaten}

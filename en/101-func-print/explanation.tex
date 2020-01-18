@@ -1,29 +1,34 @@
-\paragraph{Functiedefinitie}
+\paragraph{Defining a function}
 
-Bij functies onderscheiden we de \emph{definitie}, waarin wordt beschreven wat de functie moet doen, van de \emph{aanroep}, die vertelt dat de functie daadwerkelijk moet worden uitgevoerd. Dat betekent meteen dat als we een functie defini\"eren de functie niet direct wordt uitgevoerd. Een functiedefinitie ziet er in dit boek als volgt uit:
-
-\begin{verbatim}
-<type> <naam van functie>():
-  <inhoud van functie>
-\end{verbatim}
-
-Voorlopig zullen we \texttt{void} invullen als \texttt{<type>}. In de praktijk is dat een functie die een opdracht uitvoert (zoals \texttt{print}). Een voorbeeld van een functie die iets doet:
+For functions there is a separation between the \emph{definition}, which describes what actions the function will perform, and the function \emph{call}, which signals that our function should be run. This also means that as we define a function, it will not automatically be run, allowing us to postpone running it until we need it. This, in turn, allows us to call a function multiple times in different parts of our programs. In this book, a function definition will look like this:
 
 \begin{verbatim}
-void ding_printer():
-  print("iets")
+<type> <name of function>():
+    <function body>
 \end{verbatim}
 
-\paragraph{Functieaanroep}
-
-Van zichzelf doet een definitie niet anders dan een functie defini\"eren onder een gestelde naam. Het aanroepen van de functie gebeurt dan als volgt:
+For now, we will use \texttt{void} for the \texttt{<type>}. This word \texttt{void} signals us that the function is intended to perform some action (later, we will meet functions that are intended to calculate something). One example of a function that performs an action is a printing function:
 
 \begin{verbatim}
-<naam van functie>()
+void print_reassuring_message():
+    print("I'm still here!")
 \end{verbatim}
 
-\paragraph{Traceren} Functieaanroepen kun je traceren. We starten bij de allereerste regel die geen functiedefinitie is, maar een aanroep, en van daar stappen we naar de functie die wordt aangeroepen. Om duidelijk te maken welke functies er zijn, hebben we de definities gemarkeerd met een streep in de kantlijn:
+\paragraph{Calling a function}
+
+Calling a function looks like this:
+
+\begin{verbatim}
+<name of function>()
+\end{verbatim}
+
+As you can see, the parentheses \texttt{()} are an important part of the function definition, as well as of the function call. Most programming languages use these to discern the use of functions from other elements of the program.
+
+% TODO potential end note: the Ruby language makes () optional even for function calls, which means that the names of functions must be even more discerning than in other languages
+
+\paragraph{Tracing} Function calls can be traced, but because definition and calls are separate, we need a clear notation that is different from before. Say we take the program below. The execution of the program starts at the first line that is not a function definition (the last line). From there, we jump to the function \texttt{baz} that is being called, which makes us jump to the next function \texttt{bar}. The key is to strictly follow the top-down sequence of statements, unless there is a function call.
+
+In our trace we put lines next to the two functions to have a clearly visible separation:
 
 \includegraphics[width=.4\textwidth]{1-trace-calls.jpeg}
 
-Zo zie je in welke volgorde de twee \texttt{print}-statements worden uitgevoerd.

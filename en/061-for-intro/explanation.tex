@@ -31,9 +31,9 @@ Because the \texttt{for}-loop is a shorthand, it may not be immediately obvious 
 
 \begin{tabular}{lp{4em}l}
                                          && \tikzmark{i2}\verb|<init>| \\
-\verb|for(<init>|\tikzmark{i1}\verb|; <conditie>|\tikzmark{c1}\verb|; <update>|\tikzmark{u1}\verb|)|
-&& \verb|while|\tikzmark{c2}\verb|(<conditie>)| \\
-\verb|    <inhoud van loop>|             && \verb|    <inhoud van loop>| \\
+\verb|for(<init>|\tikzmark{i1}\verb|; <condition>|\tikzmark{c1}\verb|; <update>|\tikzmark{u1}\verb|)|
+&& \verb|while|\tikzmark{c2}\verb|(<condition>)| \\
+\verb|    <loop body>|             && \verb|    <loop body>| \\
                                          && \verb|    |\tikzmark{u2}\verb|<update>|
 \end{tabular}
 \begin{tikzpicture}[overlay,remember picture]

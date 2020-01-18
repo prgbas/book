@@ -9,10 +9,10 @@ In the following code fragment, a \emph{value} is assigned to a \emph{variable}:
 Upon executing that line of code, a variable is created with the name \texttt{het}, and it is assigned the value \texttt{2.2}. This variable then becomes part of the \emph{final state} after executing the code fragment. However, a code fragment can also contain multiple assignments below each other. In the following example, we assign three variables, each with their own name:
 
 \begin{tracelist}[l|ccc]
-                     &         \texttt{ike} &      \texttt{dev} &         \texttt{wan} \\
- \texttt{ike = 3.14} & \fbox{\texttt{3.14}} &                   &                      \\
-\texttt{dev = 3 / 4} &        \texttt{3.14} & \fbox{\texttt{0}} &                      \\
- \texttt{wan = 0.75} &        \texttt{3.14} &       \texttt{0} & \fbox{\texttt{0.75}}
+            &       ike   &      dev &       wan   \\
+ike = 3.14  & \fbox{3.14} &          &             \\
+dev = 3 / 4 &       3.14  & \fbox{0} &             \\
+wan = 0.75  &       3.14  &       0  & \fbox{0.75}
 \end{tracelist}
 
 On the left we show the lines of code that are executed. On the right, we keep track of what happens when executing each line: we \emph{trace} the code fragment. As one variable is being assigned, we draw a box around the new value. On the lines below, that value is retained, which we show by copying the value down. By doing this for all lines, we can read the final state of all variables on the last line: \texttt{ike}, \texttt{dev} and \texttt{wan}, with their accompanying values.

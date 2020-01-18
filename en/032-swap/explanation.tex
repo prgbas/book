@@ -1,12 +1,10 @@
 \paragraph{Swapping the values of variables}
 
-We will now see how to combine a number of assignments to develop an \emph{algorithm}. An algorithm is a general procedure that a computer can execute. It is general because it uses a number of variables that may be assigned numbers or other data depending on the situation.
+We will now see how to combine a number of assignments to develop an \emph{algorithm}. An algorithm is a general procedure that a computer can execute. It is general because it uses a number of variables that may be assigned numbers or other data depending on the situation. Let's develop an algorithm to swap the values of \underline{two} variables,
 
-Let's develop an algorithm to swap the values of \underline{two} variables,
-
-\vspace*{-.5\baselineskip}\begin{center}
+\vspace*{-.5\parskip}\begin{center}
 \texttt{a = 54} \quad and \quad \texttt{b = 29}.
-\end{center}\vspace*{-.5\baselineskip}
+\end{center}\vspace*{-.5\parskip}
 
 As a first intuition, you might think to assign the value of \texttt{b} to \texttt{a}, and the value of \texttt{a} to \texttt{b}. An algorithm might then look like this:
 
@@ -26,7 +24,7 @@ b = a &        29 &  \fbox{29}
 
 Now note that this is not the intended effect of the algorithm! Instead of swapping, the value of \texttt{a} is overwritten with \textbf{b}'s original value, and now both contain the same number. 
 
-The problem is the following: on line three (TODO numbering), we would like to assign \texttt{b} the value of \texttt{a}, but at that point, \texttt{a} has already been overwritten. From this analysis we may have an intuition for a solution: we need to make sure that on line 3, the original value of \texttt{a} is still available. To do this, we need to introduce a third variable, which can ``save'' the value of \texttt{a} before it is overwritten.
+The problem is the following: on line three, we would like to assign \texttt{b} the value of \texttt{a}, but at that point, \texttt{a} has already been overwritten. From this analysis we may have an intuition for a solution: we need to make sure that on line 3, the original value of \texttt{a} is still available. To do this, we need to introduce a third variable, which can ``save'' the value of \texttt{a} before it is overwritten.
 
 \begin{tracelist}
 t = a \\

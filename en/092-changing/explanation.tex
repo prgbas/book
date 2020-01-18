@@ -1,9 +1,10 @@
-\paragraph{Aanpassen}
-Arrays zijn modificeerbaar. Dat wil zeggen dat als we eenmaal een array hebben gemaakt, we later nog aanpassingen kunnen doen. Neem het volgende voorbeeld:
+\paragraph{Mutating}
 
-\begin{verbatim}
+Arrays are \emph{mutable}, which means that once we have created an array, we can still make changes later. Usually, that does not mean that the \emph{length} of the array can be changed, but each of its elements can. Take this example:
+
+\begin{nnflisting}
 lan = [0, 0, 0]
 lan[1] = 5
-\end{verbatim}
+\end{nnflisting}
 
-Eerst maken we een array met drie nullen. Daarna maken we van het eerste element van de array een \texttt{5}. Na het uitvoeren van dit codefragment is array \texttt{lan} $\rightarrow$ \texttt{[0, 5, 0]}.
+First we create an array containing three 0's, after which we change the second element of the array to \texttt{5}. So after executing this code fragment, we have an array containing \texttt{[0, 5, 0]}.

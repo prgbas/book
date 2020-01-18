@@ -1,51 +1,71 @@
-\paragraph{Standaard-reeksen}
+\paragraph{Generating sequences}
 
-Met een loop kun je reeksen getallen printen. Met de volgende \texttt{for}-loop printen we de getallen 0 tot en met 9:
+You can use a loop to print number sequences. This is a \texttt{for}-loop that prints the numbers from 0 up to and including 5:
 
-\begin{minipage}{0.45\textwidth}
-\begin{verbatim}
-for(i = 0; i < 10; i++)
+% \vspace{-\abovedisplayskip}
+\begin{minipage}[t]{0.5\textwidth}
+\begin{nllisting}
+for(i = 0; i < 6; i++)
     print(i)
-\end{verbatim}
-\end{minipage}
-\vline\hfill
-\begin{minipage}{0.45\textwidth}
-\texttt{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+\end{nllisting}
+\end{minipage}%
+\begin{minipage}[t]{0.5\textwidth}
+\begin{bklisting}
+0
+1
+2
+3
+4
+5
+\end{bklisting}
 \end{minipage}
 
-Om andere reeksen te printen moet je achterhalen wat de regelmaat in de reeks is. Vaak kun je je loop dan baseren op het voorbeeld hierboven. Wil je bijvoorbeeld tien getallen uit de reeks $0, 4, 8, 12, 16, ...$ printen, dan zou je kunnen opmerken dat elk van die getallen steeds vier keer zo groot is als het getal uit de reeks hierboven. Dus kunnen we ons programma zo aanpassen:
+To print other sequences we need to find out the rhythm of the sequence. Quite often, you can base your loop on the example above. Let's say we would like to print six numbers from the sequence $0, 4, 8, 12, ...$, we might notice that each of those numbers is exactly four times the number from the earlier sequence. This means that we could adapt our code as follows:
 
-\begin{minipage}{0.45\textwidth}
-\begin{verbatim}
+\begin{minipage}[t]{0.5\textwidth}
+\begin{nllisting}
 for(i = 0; i < 10; i++)
     print(i * 4)
-\end{verbatim}
-\end{minipage}
-\vline
-\begin{minipage}{0.45\textwidth}
-\hfill\mbox{\texttt{0, 4, 8, 12, 16, 20, 24, 28, 32, 36}}
+\end{nllisting}
+\end{minipage}%
+\begin{minipage}[t]{0.5\textwidth}
+\begin{bklisting}
+0
+4
+8
+12
+16
+20
+\end{bklisting}
 \end{minipage}
 
-Voor de reeks $1, 2, 3, 4, ...$ kunnen we het volgende programma gebruiken. Vergelijk het weer met het eerste programma hierboven:
+If we would like to print the sequence $1, 2, 3, 4, ...$, starting with 1 instead of 0, we could use the following code. Compared to the first example, each number is \emph{one more}:
 
-\begin{minipage}{0.45\textwidth}
-\begin{verbatim}
-for(i = 0; i < 10; i++)
+\begin{minipage}[t]{0.5\textwidth}
+\begin{nllisting}
+for(i = 0; i < 6; i++)
     print(i + 1)
-\end{verbatim}
+\end{nllisting}
 \end{minipage}
-\vline\hfill
-\begin{minipage}{0.45\textwidth}
-\texttt{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+\begin{minipage}[t]{0.5\textwidth}
+\begin{bklisting}
+1
+2
+3
+4
+5
+6
+\end{bklisting}
 \end{minipage}
 
-\paragraph{Aantal stappen}
+\paragraph{Writing an algorithm}
 
-Je kunt de lengte van de reeks vari\"{e}ren door de conditie van de loop zelf aan te passen. Met \texttt{i < 10} printen we 10 getallen, maar dat kan net zo goed een ander aantal zijn.
+To design an algorithm is to create a general procedure that can be easily changed to accommodate different situations. In this case, there are two things that can be changed. The \emph{rhythm} of the sequence is defined by the formula in the \texttt{print}-statement. The \emph{length} of the sequence can be controlled by changing the loop condition. By using  \texttt{i < 6} we have been printing sequences of six numbers, but you can change it as required.
 
-\paragraph{Traceren}
+\paragraph{Tracing}
 
-Om te controleren of de programma's kloppen, kun je een trace maken. Je hoeft waarschijnlijk niet de hele loop uit te schrijven; een aantal stappen is genoeg, zolang je kunt verifi\"{e}ren dat de eerste paar getallen precies kloppen.
+To check the correctness of your programs, you can trace them after writing. Most likely, you will not even have to trace the full extent of the program. Instead, tracing a couple of steps is enough, as long as you can be sure that the rhythm of the generated sequence is as expected.
+
 
 % Laten we eens kijken hoe we je met een \emph{loop} verschillende getallenreeksen kunt printen. Stel je wil de eerste \texttt{10} getallen van de volgende reeks printen:
 % \begin{verbatim}

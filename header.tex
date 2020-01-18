@@ -33,12 +33,21 @@
 \usepackage{translations}
 \input{\langdir/translations}
 
+\usepackage{varwidth}
+
 %
 % basic typography setup
 %
-\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\setlength{\parskip}{2ex plus 0.5ex minus 0.2ex}
 \setlength{\parindent}{0pt}
+
+% remove any indentation for verbatims
 \fvset{xleftmargin=0pt}
+
+% remove seps above "center" environment
+\let\oldcenter\center
+\let\oldendcenter\endcenter
+\renewenvironment{center}{\setlength\topsep{0pt}\oldcenter}{\oldendcenter}
 
 %
 % utilities
@@ -58,12 +67,12 @@
 % \renewcommand{\arraystretch}{1.4}
 
 \newenvironment{tracelist}[1][l]{%
-  \vspace*{-.5\baselineskip}\begin{center}%[htb!]
+  \begin{center}%[htb!]
     \ttfamily
     \centering
     \begin{tabular}{#1}}{%
     \end{tabular}
-  \end{center}\vspace*{-.5\baselineskip}}
+  \end{center}}
 
 \newenvironment{tracelist-left}[1][l]{
     \ttfamily
@@ -80,17 +89,32 @@
 \newcommand{\typesetnline}[1]{\addtocounter{lineno}{1}%
     \noindent\hskip\listingindent\makebox[0pt][r]{{\color{Gray}\tt\tiny\arabic{lineno} \ }}%
     \strut #1\par\penalty\listingpenalty}
+
+\newcommand{\typesetuline}[1]{%
+    \noindent\hskip\listingindent%
+    \strut #1\par\penalty\listingpenalty}
+
 \NewFileListingCommand{\nlisting}{1}{\prelistingskip}%
     {\setcounter{lineno}{0}\listingfont}{\typesetnline}{\postlistingskip}
 
-\NewListingEnvironment{nnflisting}{0}{\prelistingskip\vskip2\parskip}%
-    {\setcounter{lineno}{0}\listingfont}{\typesetnline}{\postlistingskip\vskip2\parskip}
+\NewListingEnvironment{nnflisting}{0}{\prelistingskip\centering\begin{varwidth}{\linewidth}}%
+    {\setcounter{lineno}{0}\listingfont}{\typesetnline}{\end{varwidth}\vskip\parskip}
+
+\NewListingEnvironment{bklisting}{0}{}%
+    {\listingfont}{\typesetuline}{}
+
+\NewListingEnvironment{nllisting}{0}{}%
+    {\setcounter{lineno}{0}\listingfont}{\typesetnline}{}
 
 \newcommand\prglisting[1]{\vtop{\vskip2\parskip\filelisting{#1}}}
 \newcommand\prnlisting[1]{\vtop{\vskip2\parskip\nlisting{#1}}}
 % \newcommand\prnlisting[1]{\vtop{\vskip2\parskip\nlisting{#1}}}
-\setlength{\listingskipamount}{0pt}
+\setlength{\listingskipamount}{\parskip}
 \setlength{\listingindent}{0pt}
+
+\newenvironment{centeredlisting}[1][l]{
+    \makebox[\textwidth][c]{\begin{nnflisting}#1\end{nnflisting}}
+}
 
 %
 % xsim - exercises, questions and tasks
@@ -128,7 +152,7 @@
 
 % custom tasks
 % \settasks{debug} % shows debugging boxes around the task envs
-\NewTasks[item-indent=0pt,label-offset=0pt,label-width=0ex,after-item-skip=2em]{mltasks}
+\NewTasks[item-indent=0pt,label-offset=0pt,label-width=0ex,after-item-skip=0pt]{mltasks}
 \NewTasks[item-indent=0pt,label-width=3em]{sltasks}
 \NewTasks[item-indent=2em,label-offset=1em,label-width=1em,after-item-skip=3em plus 3em minus 3em]{longtasks}
 \newlist{items}{enumerate}{1}

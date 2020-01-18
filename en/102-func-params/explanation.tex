@@ -1,40 +1,47 @@
 \paragraph{Parameters}
 
-Functies hebben vaak parameters. Bij het aanroepen van de functie worden \emph{concrete} waarden ingevuld voor deze parameters. Vanuit het perspectief van de functie, krijgen deze waarden namen die gespecificeerd staan in de \emph{parameterlijst}. Zo hebben we deze definities:
+Functions often have \emph{parameters}. When calling the function, we supply \emph{concrete} values for these parameters, which is called \emph{parameter passing}. From the function's perspective, these values are assigned names the are specified in the \emph{parameter list} of the function definition.
+
+\begin{verbatim}
+<type> <name of function>(<parameter list>):
+    <function body>
+\end{verbatim}
+
+Now consider these two function definitions. Both have two parameters named in the parameter list.
 
 \begin{figure}[h]
 \begin{subfigure}[b]{.5\linewidth}
 \begin{verbatim}
-void datum_1(dag, maand):
-  print(dag)
-  print(maand)
+void date_1(day, month):
+    print(day)
+    print(month)
 \end{verbatim}
 \end{subfigure}
 \begin{subfigure}[b]{.5\linewidth}
 \begin{verbatim}
-void datum_2(maand, dag):
-  print(dag)
-  print(maand)
+void date_2(month, day):
+    print(day)
+    print(month)
 \end{verbatim}
 \end{subfigure}
 \end{figure}
 
-In het eerste geval hebben we de parameters \texttt{dag} en \texttt{maand}. In het tweede geval \texttt{maand} en \texttt{dag}, in de omgekeerde volgorde. Deze volgorde heeft effect op hoe de meegegeven parameters behandeld worden. We roepen de functies aan in deze voorbeelden:
+In the left definition we specify the parameters \texttt{day} and \texttt{month}. In the right definition, we specify \texttt{month} and \texttt{day}, so in the reverse order. This \emph{order} has an effect on what names are given to the concrete parameters that are passed when calling the function. Let's call the functions:
 
 \begin{figure}[h]
 \begin{subfigure}[b]{.5\linewidth}
 \begin{verbatim}
-datum_1(21, 6)
+date_1(21, 6)
 \end{verbatim}
 \end{subfigure}
 \begin{subfigure}[b]{.5\linewidth}
 \begin{verbatim}
-datum_2(6, 21)
+date_2(6, 21)
 \end{verbatim}
 \end{subfigure}
 \end{figure}
 
-De uitvoer is dan:
+The output of the functions would then be:
 
 \begin{figure}[h]
 \begin{subfigure}[b]{.5\linewidth}
@@ -51,13 +58,14 @@ De uitvoer is dan:
 \end{subfigure}
 \end{figure}
 
-\paragraph{Traceren}
+\paragraph{Tracing}
 
-Het volgen van alle waarden bij een functie met parameters kan snel ingewikkeld worden. Daarom is het ook nu handig te traceren. Allereerst strepen we de functies aan (in dit geval \'e\'entje). Dan markeren we de startregel met een pijltje.
+Keeping track of all values when passing parameters can easily become very tedious, which is why we often need to trace them explicitly. Below, like before, we put a line next to the one function that is defined. We also mark the starting line with a little arrow. 
 
 \includegraphics[width=.8\textwidth]{2-trace-params.jpeg}
 
-Op de startregel staat een functieaanroep. Deze aanroep nemen we over rechts van de functiedefinitie. De functiedefinitie nemen we ook over, maar we vullen alle waarden zo \textbf{concreet} mogelijk in. De parameters \texttt{y}, \texttt{x} en \texttt{z} hebben in de concrete versie waarden gekregen, dus vullen we die ook in op de \texttt{print}-regel.
+On that starting line, the function \texttt{ash} is called. To the right of the definition of that function, we draw a line, and copy the function definition, while substituting the concrete values from the function call.
 
-Tot slot blijft er nog een berekening over in het \texttt{print}-statement. Als we die evalueren, krijgen we het getal dat er geprint zal worden.
+Combining the original function definition and the substituted version, we can infer that in the function \texttt{y = 12}, \texttt{x = 11} and \texttt{z = 10}. We use this information to substitute those values in the right places of the \texttt{print} line.
 
+Then, only a small calculation is left, of which the result will be printed. When we evaluate the expression using the basic rules, we get the number that will be printed.

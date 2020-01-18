@@ -1,21 +1,24 @@
-\paragraph{Aanroepen met variabelen}
+\paragraph{Passing variables}
 
-Functies kunnen ook worden aangeroepen met variabelen als concrete waarden voor de parameters. Zo hebben we bijvoorbeeld de volgende functie:
+Functions can also accept the values from variables as concrete values for their parameters. Let's study the following function:
 
-\vspace*{-\baselineskip}\begin{verbatim}
+\begin{minipage}[t]{0.5\textwidth}
+\begin{nllisting}
 void twice(text):
-  print(text)
-  print(text)
-\end{verbatim}\vspace*{-\baselineskip}
-
-Als we deze functie als volgt aanroepen:
-
-\vspace*{-\baselineskip}\begin{verbatim}
+    print(text)
+    print(text)
 fruits = "pineapple blueberry"
 twice(fruits)
-\end{verbatim}\vspace*{-\baselineskip}
+\end{nllisting}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\begin{listing}
+pineapple blueberry
+pineapple blueberry
+\end{listing}
+\end{minipage}
 
-dan krijg je twee keer de tekst \texttt{pineapple blueberry} op je scherm geprint. De waarde van de variabele \texttt{fruits}, dat is de string \texttt{"pineapple blueberry"}, wordt namelijk meegegeven aan de functie \texttt{twice}. Op de regel met \texttt{twice(fruits)} wordt de huidige waarde van fruits  ingevuld. Dit kan je je voorstellen alsof de regel veranderd wordt naar \texttt{twice("pineapple blueberry")}. Binnen de functie \texttt{twice} wordt de string \texttt{"pineapple blueberry"} toegewezen aan \texttt{text}. Daarna wordt die waarde geprint.
+We passed a single variable called \texttt{fruits} to the function. Its contents are named \texttt{text} inside the function definition. It is this text that is printed on the screen twice.
 
 % Let er goed op dat een functie de waarde gebruikt die wordt meegegeven. Zo kan je buiten de functie een variabele hebben met dezelfde naam als een parameter van de functie. Bijvoorbeeld:
 %
@@ -28,22 +31,20 @@ dan krijg je twee keer de tekst \texttt{pineapple blueberry} op je scherm geprin
 %
 % Dit stukje code print \texttt{sarah}. Hoewel er buiten de functie de variabele \texttt{person} bestaat met de waarde \texttt{"david"}, wordt de functie aangeroepen met de string \texttt{"sarah"}. De waarde \texttt{"sarah"} wordt toegewezen aan de variabele \texttt{person}, en zo wordt uiteindelijk \texttt{sarah} geprint.
 
-Ook bij het aanroepen van functies met variabelen maakt de volgorde van de parameters uit:
+Like before, the order of the parameters will be consistent between the definition and any function calls that are performed. This is especially important because sometimes, parameters may have the same name as variables found elsewhere in the code. Consider this fragment:
 
-\vspace*{-\baselineskip}\begin{verbatim}
+\begin{nnflisting}
 x = 10
 y = 40
 void minus(x, y):
-  print(x - y)
+    print(x - y)
 minus(y, x)
-\end{verbatim}\vspace*{-\baselineskip}
+\end{nnflisting}
 
-Omdat de waardes van de variabelen worden meegegeven aan de functie wordt hier \texttt{30} geprint en niet \texttt{-30}. Je kan de regel \texttt{minus(y, x)} vervangen door \texttt{minus(40, 10)}, ofwel de waardes van de variabelen \texttt{x} en \texttt{y} op dat moment. Binnen de functie wordt de waarde \texttt{40} aan de variabele \texttt{x} en de waarde \texttt{10} aan de variabele \texttt{y} toegewezen. Dan wordt er \texttt{print(x - y)} uitgevoerd, ofwel \texttt{print(40 - 10)}.
+Because the values of \texttt{y} and \texttt{x} are passed to the function in that order, inside the function we will have the concrete parameters \texttt{x = 40} and \texttt{y = 10}. Hence, the result that is printed will be 30.
 
-\paragraph{Traceren}
+\paragraph{Tracing}
 
-We voegen nu expliciet een element aan de trace toe: het vervangen van de waarden in de functieaanroep. Bij de startregel strepen we de variabelenamen door, en vervangen deze door de waarden die eerder toegekend zijn. (Hierbij letten we nog helemaal \emph{niet} op de functiedefinitie!)
+Because of the potential confusion between variable and parameter names, we add an explicit step to our function tracing technique: substituting values in the function call. We cross out the variable name and write its value next to it. We can do this before considering the function's definition at all. Now that we have substituted the concrete values, it's easy to copy them into the concrete function call like in earlier sections.
 
 \includegraphics[width=.8\textwidth]{3-trace-varsparams.jpeg}
-
-Nu de concrete waarden ingevuld zijn, kunnen we de trace verder opschrijven zoals in de vorige paragraaf.

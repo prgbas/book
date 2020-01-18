@@ -12,11 +12,11 @@ else
 
 Tracing the program above would look like this:
 
-\begin{tracelist-left}[lccccccc]
+\begin{tracelist}[lccccccc]
  & \texttt{1} & \texttt{2} & \texttt{4} & \texttt{5} \\ \hline
 \\[-1em]
 \texttt{a} & \fbox{\texttt{1}} & \texttt{1} & \texttt{1} & \texttt{-9}
-\end{tracelist-left}
+\end{tracelist}
 
 In summary, an \texttt{if}-\texttt{else} combination always describes two possibilities: what should happen in case the condition is met (\texttt{a < 0}), and what should happen in case the condition is not met, \texttt{a} having a value that meets the opposite condition \texttt{a >= 0}.
 
@@ -36,10 +36,10 @@ else
 
 The program starts with \texttt{a} being the integer \texttt{3}, and the trace looks like this:
 
-\begin{tracelist-left}[lccccccc]
+\begin{tracelist}[lccccccc]
  & \texttt{1} & \texttt{2} &  \texttt{4} & \texttt{5} &  \\ \hline
 \\[-1em]
  \texttt{a} & \fbox{\texttt{3}} & \texttt{3} & \texttt{3} & \fbox{\texttt{1}} \\
-\end{tracelist-left}
+\end{tracelist}
 
 By using even more \texttt{else\,if} statements, you can specify further options. The \texttt{else} statement always comes last, because it describes ``any other possibility''.

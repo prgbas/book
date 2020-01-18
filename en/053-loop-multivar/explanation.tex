@@ -13,7 +13,7 @@ a = 42
 
 The accompanying trace looks like this;
 
-\begin{tracelist-left}[l|ccccccccccc]
+\begin{tracelist}[l|ccccccccccc]
   & \texttt{1} & \texttt{2} & \texttt{3} &  \texttt{4} &
                           \texttt{5} & \texttt{3} & \texttt{4} &  \texttt{5} &
                                                     \texttt{3} & \texttt{6}  \\ \hline
@@ -21,7 +21,7 @@ The accompanying trace looks like this;
 var \texttt{a} & \fbox{0} & 0 & 0 & \fbox{1} & 1 & 1 & \fbox{2} & 2 & 2 & \fbox{42} \\
 var \texttt{b} & & \fbox{0} & 0 & 0 & \fbox{1} & 1 & 1 & \fbox{2} & 2 & 2 \\
 a < 2 & & & true & & & true & & & \fbox{false}
-\end{tracelist-left}
+\end{tracelist}
 
 \paragraph{Incrementing}
 

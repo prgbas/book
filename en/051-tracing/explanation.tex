@@ -15,13 +15,13 @@ On line 1, the variable \texttt{a} is initialized with the integer \texttt{0}. O
 
 Like with sequences of assignment statements, we can trace the execution of loops. The technique is a little bit different, because the loop may be executed multiple times. For the previous fragment, the trace looks like this:
 
-\begin{tracelist-left}[l|ccccccc]
+\begin{tracelist}[l|ccccccc]
 regel & \texttt{1} & \texttt{2} & \texttt{3} &  \texttt{2} &
                           \texttt{3} & \texttt{2} & \texttt{4} \\ \hline
 \\[-1em]
 var \texttt{a} & \fbox{\texttt{0}} & \texttt{0} & \fbox{\texttt{1}} & \texttt{1} & \fbox{\texttt{2}} & \texttt{2} & \fbox{\texttt{1}}\\
 a < 2 & & true &  & true &  & \fbox{false} &
-\end{tracelist-left}
+\end{tracelist}
 
 Atop the table are the line numbers for each line that we encounter, from left to right. Below that, we include lines for each variable or expression that we would like to trace. Like before, we write down a value for each variable as it is initialized, and we draw a box around each variable whenever it changes.
 

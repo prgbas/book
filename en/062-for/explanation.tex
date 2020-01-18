@@ -9,7 +9,7 @@ for(i = 0; i < 2; i++)
 a = a + 6
 \end{nnflisting}
 
-As soon as we try to trace the loop using previous techniques, we realize that line 2 contains many parts that are actually performed at other points in the code. One way to perform the trace is to first translate the code into a \texttt{while}-loop, which is fine. We can also augment our tracing technique to accommodate \texttt{for}-loops. Let's make the initialization (\texttt{i = 0}), condition (\texttt{i < 2}) and update (\texttt{i++}) explicit in the trace:
+As soon as we try to trace the loop using previous techniques, we realize that line 2 contains many parts that are used at other points in the code. One way to more easily perform the trace is to first translate the code into a \texttt{while}-loop, which is fine. We can also augment our tracing technique to better accommodate \texttt{for}-loops. Let's make the initialization (\texttt{i = 0}), condition (\texttt{i < 2}) and update (\texttt{i++}) explicit in the trace:
 
 \setlength\tabcolsep{3pt}
 \begin{tracelist-left}[l|ccccccccccccc]
@@ -22,7 +22,7 @@ var \texttt{a} & \fbox{\texttt{-10}} & \texttt{-10} & \texttt{-10} & \fbox{\text
 \end{tracelist-left}
 \setlength{\tabcolsep}{6pt}
 
-But once you are used to the form of the \texttt{for}-loop, you might reduce the trace again:
+Once you are used to the form of the \texttt{for}-loop, you might reduce the trace again:
 
 \begin{tracelist-left}[l|ccccccccccccc]
 regel & \texttt{1} & \texttt{2} & \texttt{2} & \texttt{3} & \texttt{2} & \texttt{2} & \texttt{3} & \texttt{2} & \texttt{2} & \texttt{4} \\ \hline
