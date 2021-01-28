@@ -7,7 +7,7 @@ For functions there is a separation between the \emph{definition}, which describ
     <function body>
 \end{verbatim}
 
-For now, we will use \texttt{void} for the \texttt{<type>}. This word \texttt{void} signals us that the function is intended to perform some action (later, we will meet functions that are intended to calculate something). One example of a function that performs an action is a printing function:
+For now, we will use \texttt{void} for the \texttt{<type>}. This word \texttt{void} signals that the function is intended to perform some action (later, we will see functions that calculate something). One example of a function that performs an action is a printing function:
 
 \begin{verbatim}
 void print_reassuring_message():
@@ -22,13 +22,12 @@ Calling a function looks like this:
 <name of function>()
 \end{verbatim}
 
-As you can see, the parentheses \texttt{()} are an important part of the function definition, as well as of the function call. Most programming languages use these to discern the use of functions from other elements of the program.
+As you can see, the parentheses \texttt{()} are an important part of the function definition, as well as of the function call. Most programming languages use these to discern the use of functions from other elements of the program. Calling a function can be done from anywhere in the program as long as it has been \emph{defined} previously.
 
 % TODO potential end note: the Ruby language makes () optional even for function calls, which means that the names of functions must be even more discerning than in other languages
 
-\paragraph{Tracing} Function calls can be traced, but because definition and calls are separate, we need a clear notation that is different from before. Say we take the program below. The execution of the program starts at the first line that is not a function definition (the last line). From there, we jump to the function \texttt{baz} that is being called, which makes us jump to the next function \texttt{bar}. The key is to strictly follow the top-down sequence of statements, unless there is a function call.
-
-In our trace we put lines next to the two functions to have a clearly visible separation:
+\paragraph{Tracing} Function calls can be traced, but because the definition of a function and calls to functions are separate, we need a clear notation. Say we take the program below. The execution of the program starts at the first line that is not a function definition (in our case, the last line). On this line, the function \texttt{baz} is called. In the function \texttt{baz}, the function `bar` is called, which we can then \"jump\" to. The key is to strictly follow the top-down sequence of statements, unless there is a function call.
 
 \includegraphics[width=.4\textwidth]{1-trace-calls.jpeg}
 
+In our trace we put lines next to the two functions to have a clearly visible separation, and we number the lines in order of execution. We can see that \"fly\" is printed before \"rainbow\".
