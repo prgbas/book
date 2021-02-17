@@ -22,7 +22,7 @@ pineapple blueberry
 
 We passed a single variable called \texttt{fruits} to the function. The value of the variable \texttt{fruits} is passed to the function, where it will now be named \texttt{text}. This \texttt{text} is then printed to the screen twice.
 
-Like before, the order of the values that are passed to a function will determine the parameter names these values get. This is \emph{always} done in order. This is especially important because sometimes, parameters may have the same name as variables found elsewhere in the code. Consider this fragment:
+Like before, the order of the values that are passed to a function will determine the parameter names these values get. This is \emph{always} done in order. This is especially important, because sometimes parameters may have the same name as variables found elsewhere in the code. Consider this fragment:
 
 \begin{nnflisting}
 x = 10
@@ -36,6 +36,6 @@ Because the values of \texttt{y} and \texttt{x} are passed to the function in th
 
 \paragraph{Tracing}
 
-Because of the potential confusion between variable and parameter names, we add an explicit step to our function tracing technique: substituting values in the function call. We cross out the variable name and write its value next to it. We can do this before considering the function's definition at all. Now that we have substituted the concrete values, it's easy to copy them into the concrete function call like in earlier sections.
+Because of the potential confusion between variable and parameter names, we add an explicit step to our function tracing technique: substituting values in the function call. We cross out the variable name and write its value next to it. We can do this before considering the function's definition at all. Now that we have substituted the concrete values, it's easy to copy them into the function call like in earlier sections.
 
 \includegraphics[width=.8\textwidth]{3-trace-varsparams.jpeg}
