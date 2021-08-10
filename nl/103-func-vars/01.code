@@ -1,4 +1,0 @@
-void foo(x):
-   print(x)
-inv = "fly"
-foo(inv)

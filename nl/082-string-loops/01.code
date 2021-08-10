@@ -1,6 +1,0 @@
-s = "Hello, world!"
-i = 0
-len = length(s)
-while(i < len)
-   print(s[i])
-   i = i + 1

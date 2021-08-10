@@ -1,4 +1,0 @@
-i = 12
-while(i < 15)
-   print(i)
-   i++

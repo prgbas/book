@@ -1,9 +1,0 @@
-int uru(x, y)
-   return 2 * y
-int sal(z, y)
-   return 4 / uru(y, z)
-int hit(z, x)
-   return 2 + sal(z, x)
-y = 5
-x = 6
-print(hit(x, y))

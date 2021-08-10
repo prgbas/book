@@ -1,5 +1,0 @@
-hal = [10, 20, 30]
-i = 2
-while(hal[i] / 10 > 1)
-   print(i)
-   i = i - 1

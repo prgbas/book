@@ -1,3 +1,0 @@
-void oca(y, z, x):
-   print(x / y)
-oca(10, 11, 12)

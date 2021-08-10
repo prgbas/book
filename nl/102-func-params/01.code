@@ -1,3 +1,0 @@
-void hay(x):
-   print(x)
-hay("fly")

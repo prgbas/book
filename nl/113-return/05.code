@@ -1,5 +1,0 @@
-amd = 4
-float oei(dam, mad):
-   return dam * mad + amd
-sim = oei(amd, amd)
-print(sim)

@@ -1,4 +1,0 @@
-void bar(name):
-   print(name)
-foo = "skip"
-bar("jump")

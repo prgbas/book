@@ -1,3 +1,0 @@
-s = "inn dreaxx"
-for(i = 0; i < 5; i = i + 1)
-   print(s[i * 2])

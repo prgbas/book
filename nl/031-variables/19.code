@@ -1,6 +1,0 @@
-oka = 3 - 1
-oka = oka * 1
-fei = oka * 1
-oka = oka * 1.5
-oka = oka * 1
-oka = oka / 0.5

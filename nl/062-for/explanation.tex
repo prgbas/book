@@ -2,12 +2,12 @@
 
 In het volgende stuk code wordt de waarde van een variabele veranderd binnen een \texttt{for}-loop:
 
-\begin{verbatim}
-1  a = -10
-2  for(i = 0; i < 2; i++)
-3      a = i * 2
-4  a = a + 6
-\end{verbatim}
+\begin{nnflisting}
+a = -10
+for(i = 0; i < 2; i++)
+    a = i * 2
+a = a + 6
+\end{nnflisting}
 
 Als we dit fragment willen traceren hebben we een probleem. Regel 2 bestaat eigenlijk uit meerdere opdrachten: initialisatie (\texttt{i = 0}), conditie (\texttt{i < 2}) en update (\texttt{i++}). We kunnen dit expliciet opnemen in de trace:
 

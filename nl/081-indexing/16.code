@@ -1,3 +1,0 @@
-s = "Wrap"
-len = length(s)
-print(s[2 % len])

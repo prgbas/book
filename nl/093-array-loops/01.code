@@ -1,4 +1,0 @@
-klo = [1, 2, 3, 4, 5]
-l = length(klo)
-for(i = 0; i < l; i = i + 1)
-   print(klo[i])

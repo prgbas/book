@@ -2,12 +2,12 @@
 
 Het volgende stukje code bevat een voorwaardelijke opdracht, beginnend met \texttt{if}. Er is een voorwaarde of \emph{condition}, namelijk \texttt{a < 10}. De instructie op de volgende regel is extra ge\"{i}ndenteerd, waarmee we aangeven dat deze \emph{afhankelijk} is van de \texttt{if}.
 
-\begin{verbatim}
-1  a = 0
-2  if(a < 10)
-3      a = a + 10
-4  a = a - 1
-\end{verbatim}
+\begin{nnflisting}
+a = 0
+if(a < 10)
+    a = a + 10
+a = a - 1
+\end{nnflisting}
 
 In dit geval start het programma met de waarde \texttt{a = 0}. Dus wordt aan de voorwaarde \texttt{a < 10} voldaan op het moment dat deze wordt gecontroleerd. Het gevolg is dat de instructie \texttt{a = a + 10} uitgevoerd. De laatste regel staat weer helemaal links en is dus g\'{e}\'{e}n onderdeel van de voorwaardelijke instructie: deze instructie wordt uitgevoerd onafhankelijk van de \texttt{if}. Dat betekent dat het programma eindigt met de waarde \texttt{a = 9}.
 
@@ -15,27 +15,27 @@ In dit geval start het programma met de waarde \texttt{a = 0}. Dus wordt aan de 
 
 We kunnen hier, net als in het vorige hoofdstuk, de toestand van de variabelen traceren. Voor het bovenstaande stukje code ziet de trace er als volgt uit:
 
-\begin{tracelist-left}[l|cccc]
+\begin{tracelist}[l|cccc]
 regel & 1 & \texttt{2} & \texttt{3} & \texttt{4} \\
 \hline
 a & \fbox{0} & 0 & \fbox{10} & \fbox{9}
-\end{tracelist-left}
+\end{tracelist}
 
 In de eerste rij zie je de regelnummers uit het programma. In de rij eronder \emph{traceren} we de waarde van de variabele \texttt{a}. Op drie plekken is de waarde van \texttt{a} omkaderd: op deze regels wordt inhoud van de variabele gewijzigd.
 
 \paragraph{Niet waar}
 In het fragment hieronder hebben we de voorwaarde aangepast. Op moment van evalueren van de voorwaarde blijkt dat hier niet aan is voldaan. Daarom wordt de volgende regel overgeslagen. Het programma eindigt dus met \texttt{a = -1}.
 
-\begin{verbatim}
-1  a = 0
-2  if(a > 10)
-3      a = a + 10
-4  a = a - 1
-\end{verbatim}
+\begin{nnflisting}
+a = 0
+if(a > 10)
+    a = a + 10
+a = a - 1
+\end{nnflisting}
 
 De trace ziet er dan zo uit:
 
-\begin{tracelist-left}[l|ccccccc]
+\begin{tracelist}[l|ccccccc]
 regel & \texttt{1} & \texttt{2} &  \texttt{4} \\ \hline
 \texttt{a} & \fbox{\texttt{0}} & \texttt{0} & \fbox{\texttt{-1}}
-\end{tracelist-left}
+\end{tracelist}

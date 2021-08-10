@@ -1,3 +1,0 @@
-void pow(y, x):
-   print(x / y)
-pow(10, 12)

@@ -1,4 +1,0 @@
-var1 = 2
-void dra(var1, var2):
-   print(var1 + var2)
-dra(var1, 8)

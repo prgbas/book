@@ -11,9 +11,8 @@ if(a < 10)
 
 The trace is quite like the one we did in the previous section:
 
-\begin{tracelist}[lccccccc]
- & \texttt{1} & \texttt{2} & 3 & 4 \\ \hline
-\\[-1em]
+\begin{tracelist}[l|ccccccc]
+line & \texttt{1} & \texttt{2} & 3 & 4 \\ \hline
 a & \fbox{\texttt{0}} & \texttt{0} & \fbox{10} & \fbox{20}
 \end{tracelist}
 
@@ -32,9 +31,8 @@ if(a > b)
 
 To trace this program, we add rows for each variable that is in the program. The variables \texttt{b} and \texttt{c} are not initialized until later, which is why some of the values are blank.
 
-\begin{tracelist}[lccccccc]
-  & \texttt{1} & \texttt{2} & \texttt{3} &  \texttt{4} & \texttt{5} &  \texttt{6} \\ \hline
-\\[-1em]
+\begin{tracelist}[l|ccccccc]
+line & \texttt{1} & \texttt{2} & \texttt{3} &  \texttt{4} & \texttt{5} &  \texttt{6} \\ \hline
 \texttt{a} & \fbox{\texttt{1}} & \texttt{1} & \texttt{1} & \texttt{1} & \fbox{\texttt{0}} & \texttt{0} \\
 \texttt{b} & & \fbox{\texttt{0}} & \texttt{0} & \texttt{0} & \texttt{0} & \fbox{\texttt{1}} \\
 \texttt{c} & & & & \fbox{\texttt{1}} & \texttt{1} & \texttt{1} \\

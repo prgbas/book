@@ -30,6 +30,13 @@
 \usepackage{multirow}
 \usepackage{jvlisting}
 
+\usepackage[T1]{fontenc}
+
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=black,pdfborder={0,0,0},bookmarksopenlevel=2]{hyperref}
+\usepackage[open,openlevel=2]{bookmark}
+
+
+
 \usepackage{translations}
 \input{\langdir/translations}
 
@@ -119,6 +126,10 @@
 %
 % xsim - exercises, questions and tasks
 %
+
+% https://tex.stackexchange.com/a/526339
+\xsimsetup{split-aux-lists = |&|}
+
 \DeclareExerciseEnvironmentTemplate{none}
   {%
     %
@@ -150,10 +161,14 @@
     solution-template = none
 }
 
+% \newcounter{hoi}[chapter]
+
 % custom tasks
 % \settasks{debug} % shows debugging boxes around the task envs
-\NewTasks[item-indent=0pt,label-offset=0pt,label-width=0ex,after-item-skip=0pt]{mltasks}
-\NewTasks[item-indent=0pt,label-width=3em]{sltasks}
-\NewTasks[item-indent=2em,label-offset=1em,label-width=1em,after-item-skip=3em plus 3em minus 3em]{longtasks}
+\NewTasksEnvironment[item-indent=0pt,label-offset=-5em,label-width=5em,after-item-skip=0pt,label=\thechapter.\arabic*]{mltasks}
+\NewTasksEnvironment[item-indent=0em,label-offset=-5em,label-width=5em,after-item-skip=\baselineskip,label=\thechapter.\arabic*]{sltasks}
+\NewTasksEnvironment[item-indent=2.5em,label-offset=0.5em,label-width=2.0em,after-item-skip=3em plus 3em minus 3em,label=\thechapter.\arabic*]{longtasks}
 \newlist{items}{enumerate}{1}
-\setlist[items]{topsep=0pt,itemsep=0pt,label=\alph*.,align=left,leftmargin=1.5em,labelsep=0pt,labelwidth=1.5em,after=\vspace{-\baselineskip}}
+\setlist[items]{topsep=0pt,itemsep=0pt,label=\alph*.,align=left,leftmargin=1.5em,labelsep=0pt,labelwidth=1.5em}
+
+% \settasks{debug}

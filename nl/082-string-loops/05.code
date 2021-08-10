@@ -1,4 +1,0 @@
-s = "guret"
-l = length(s)
-for(i = l - 1; i >= 0; i = i - 1)
-   print(s[i])

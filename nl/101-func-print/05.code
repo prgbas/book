@@ -1,7 +1,0 @@
-void foo():
-   print("pie")
-void baz():
-   foo()
-   print("bicycle")
-foo()
-baz()

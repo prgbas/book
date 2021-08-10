@@ -1,9 +1,0 @@
-int dip(y, x)
-   return y * 4
-int mux(y, z)
-   return 5 / dip(y, z)
-int bad(x, z)
-   return mux(z, x) + 3
-y = 4
-x = 5
-print(bad(x, y))

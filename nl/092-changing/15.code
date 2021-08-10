@@ -1,3 +1,0 @@
-b = [false, true, false]
-l = 0
-b[l + 2] = b[0] || b[1]

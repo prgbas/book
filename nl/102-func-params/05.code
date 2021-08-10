@@ -1,3 +1,0 @@
-void gam(x, z):
-   print(z / x)
-gam(10, 12)

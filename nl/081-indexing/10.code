@@ -1,3 +1,0 @@
-s = "Fourier"
-muz = 3
-print(s[muz * 2])

@@ -1,3 +1,0 @@
-string foo(x):
-   return x
-print(foo("hard"))

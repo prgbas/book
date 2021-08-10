@@ -1,3 +1,0 @@
-int baz(y, x):
-   return x / y
-print(baz(10, 12))

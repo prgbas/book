@@ -1,2 +1,0 @@
-for(a = 1; a < 6; a = a + 2)
-   print(a)

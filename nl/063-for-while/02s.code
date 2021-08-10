@@ -1,4 +1,0 @@
-e = 0
-while(e < 4)
-   print(e)
-   e = e + 1

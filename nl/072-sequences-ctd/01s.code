@@ -1,4 +1,0 @@
-getal = 1
-for(i = 0; i < 12; i++)
-   print(getal)
-   getal = getal * 2

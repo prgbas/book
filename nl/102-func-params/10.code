@@ -1,3 +1,0 @@
-void duo(x, z, y):
-   print(y / z)
-duo(12, 11, 10)

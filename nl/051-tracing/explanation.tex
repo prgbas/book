@@ -1,12 +1,12 @@
 \paragraph{while-loops}
 In het volgende fragment wordt de waarde van een variabele veranderd door middel van een \emph{while-loop}:
 
-\begin{verbatim}
-1  a = 0
-2  while(a < 2)
-3      a = a + 1
-4  a = a / 2
-\end{verbatim}
+\begin{nnflisting}
+a = 0
+while(a < 2)
+    a = a + 1
+a = a / 2
+\end{nnflisting}
 
 Bij het uitvoeren van dit stuk code wordt eerst een variabele aangemaakt met de naam \texttt{a}, die op dat moment de waarde \texttt{0} krijgt toegekend. Op de regel daarna zien we de term \texttt{while}, met daarna tussen haakjes \texttt{(a < 2)}. De  term geeft aan dat we het hier over een \emph{while-loop} hebben. Het gedeelte tussen haakjes noemen we de \emph{conditie} (of een \emph{bewering}). Zolang de conditie \texttt{true} is, zal \emph{alle} code die \emph{binnen} de while-loop staat herhaald worden. Let dus op dat er ook meerdere regels code in de while-loop kunnen staan! De conditie wordt iedere keer maar \'e\'enmaal gecontroleerd: aan het begin van het codeblok dat binnen de while-loop wordt uitgevoerd.
 
@@ -14,12 +14,12 @@ Bij het uitvoeren van dit stuk code wordt eerst een variabele aangemaakt met de 
 
 Natuurlijk kunnen we de effecten van deze code, net als voor variabelen, traceren. Voor het stuk code dat hierboven staat ziet dat er als volgt uit:
 
-\begin{tracelist-left}[l|ccccccc]
+\begin{tracelist}[l|ccccccc]
 regel & \texttt{1} & \texttt{2} & \texttt{3} &  \texttt{2} &
                           \texttt{3} & \texttt{2} & \texttt{4} \\ \hline
 var \texttt{a} & \fbox{\texttt{0}} & \texttt{0} & \fbox{\texttt{1}} & \texttt{1} & \fbox{\texttt{2}} & \texttt{2} & \fbox{\texttt{1}}\\
 a < 2 & & true &  & true &  & \fbox{false} &
-\end{tracelist-left}
+\end{tracelist}
 
 Bovenin de tabel staan de regelnummers die aangeven bij welke regel we op dat moment zijn. Onderin de tabel zetten we alle variabelen (in dit geval alleen \texttt{a}), met de waardes die ze hebben bij het respectievelijke regelnummer, en de conditie, met de uitkomst hiervan bij het respectievelijke regelnummer. Bij verandering zetten we een kader om de nieuwe waarde, en in de volgende kolommen nemen we alleen de waarde over. Bij het controleren van de conditie bekijken we het resultaat van de conditie (\texttt{true} of \texttt{false}).
 

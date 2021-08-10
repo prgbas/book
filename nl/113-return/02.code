@@ -1,3 +1,0 @@
-string bar(name):
-   return "jump"
-print(bar("hi"))

@@ -1,3 +1,0 @@
-void bar(z, y, x):
-   print(y / x * z)
-bar(10, 11, 12)

@@ -1,7 +1,0 @@
-void foo():
-   print("fly")
-void bar():
-   print("jump")
-foo()
-bar()
-bar()

@@ -1,6 +1,0 @@
-gup = 3 + 0.5
-gup = 1 + 1.0
-han = 2 / 2
-gup = gup + 0.5
-han = gup - 1
-han = gup + 1.0

@@ -1,3 +1,0 @@
-void tug(z, x, y):
-   print(x / z * y)
-tug(12, 11, 10)

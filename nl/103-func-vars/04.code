@@ -1,4 +1,0 @@
-name = "pieter"
-void greet(name):
-   print("hello")
-greet(name)

@@ -1,7 +1,7 @@
 # for this project
 .DS_Store
 _generated/*.tex
-
+*.xsim
 
 ## Core latex/pdflatex auxiliary files:
 *.aux

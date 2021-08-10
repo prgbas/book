@@ -1,6 +1,0 @@
-nam = 1 + 1
-sob = 1.0 - 1.0
-nam = nam * 2
-off = sob / 0.5
-off = nam / 3
-off = off + 3

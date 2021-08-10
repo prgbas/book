@@ -1,19 +1,19 @@
 \paragraph{For-loops}
 Onderstaand codefragment print de getallen 0 t/m 9 met een \texttt{while}-loop.
 
-\begin{verbatim}
-1 i = 0
-2 while(i < 10)
-3     print(i)
-4     i++
-\end{verbatim}
+\begin{nnflisting}
+i = 0
+while(i < 10)
+    print(i)
+    i++
+\end{nnflisting}
 
 Zoals je misschien is opgevallen bevatten veel loop-constructies min of meer dezelfde ingredienten: Een \textbf{initialisatie} (\texttt{i = 0}), een \textbf{conditie} (\texttt{i < 10}), en een \textbf{update} (\texttt{i++}). Omdat dit patroon zo veel voorkomt, hebben de meeste programmeertalen hier een speciale constructie voor: de \texttt{for}-loop. Het onderstaande stukje code laat precies hetzelfde programma zien, maar dan geschreven als een \texttt{for}-loop.
 
-\begin{verbatim}
-1 for(i = 0; i < 10; i++)
-2    print(i)
-\end{verbatim}
+\begin{nnflisting}
+for(i = 0; i < 10; i++)
+    print(i)
+\end{nnflisting}
 
 De \texttt{for}-loop bevat dezelfde drie ingredienten als de \texttt{while}-loop: De initialisatie (\texttt{i = 0}), de conditie (\texttt{i < 10}), en de update (\texttt{i++}). De initialisatie (\texttt{i = 0}), wordt alleen de eerste keer uitgevoerd. De conditie (\texttt{i < 10}) wordt elke keer voor het begin van de iteratie uitgevoerd. De update (\texttt{i++}) wordt elke keer \emph{aan het einde} van de iteratie uitgevoerd. Dus, de volgorde van executie in dit voorbeeld:
 

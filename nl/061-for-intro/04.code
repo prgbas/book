@@ -1,4 +1,0 @@
-i = 14
-while(i > 10)
-   print(i)
-   i--

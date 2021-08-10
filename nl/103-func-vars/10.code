@@ -1,5 +1,0 @@
-x = 3
-a = 2
-void magic(a, b):
-   print(a - b)
-magic(x, a)

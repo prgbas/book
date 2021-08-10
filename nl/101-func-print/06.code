@@ -1,6 +1,0 @@
-void baz():
-   bar()
-   print("rainbow")
-void bar():
-   print("fly")
-baz()

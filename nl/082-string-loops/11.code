@@ -1,4 +1,0 @@
-s = "h!i"
-len = length(s)
-for(i = 0; i < 12; i = i + 2)
-   print(s[i % len])

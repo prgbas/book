@@ -2,41 +2,59 @@
 
 Met een loop kun je reeksen getallen printen. Met de volgende \texttt{for}-loop printen we de getallen 0 tot en met 9:
 
-\begin{minipage}{0.45\textwidth}
-\begin{verbatim}
-for(i = 0; i < 10; i++)
+\begin{minipage}[t]{0.5\textwidth}
+\begin{nllisting}
+for(i = 0; i < 6; i++)
     print(i)
-\end{verbatim}
-\end{minipage}
-\vline\hfill
-\begin{minipage}{0.45\textwidth}
-\texttt{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+\end{nllisting}
+\end{minipage}%
+\begin{minipage}[t]{0.5\textwidth}
+\begin{bklisting}
+0
+1
+2
+3
+4
+5
+\end{bklisting}
 \end{minipage}
 
 Om andere reeksen te printen moet je achterhalen wat de regelmaat in de reeks is. Vaak kun je je loop dan baseren op het voorbeeld hierboven. Wil je bijvoorbeeld tien getallen uit de reeks $0, 4, 8, 12, 16, ...$ printen, dan zou je kunnen opmerken dat elk van die getallen steeds vier keer zo groot is als het getal uit de reeks hierboven. Dus kunnen we ons programma zo aanpassen:
 
-\begin{minipage}{0.45\textwidth}
-\begin{verbatim}
+\begin{minipage}[t]{0.5\textwidth}
+\begin{nllisting}
 for(i = 0; i < 10; i++)
     print(i * 4)
-\end{verbatim}
-\end{minipage}
-\vline
-\begin{minipage}{0.45\textwidth}
-\hfill\mbox{\texttt{0, 4, 8, 12, 16, 20, 24, 28, 32, 36}}
+\end{nllisting}
+\end{minipage}%
+\begin{minipage}[t]{0.5\textwidth}
+\begin{bklisting}
+0
+4
+8
+12
+16
+20
+\end{bklisting}
 \end{minipage}
 
 Voor de reeks $1, 2, 3, 4, ...$ kunnen we het volgende programma gebruiken. Vergelijk het weer met het eerste programma hierboven:
 
-\begin{minipage}{0.45\textwidth}
-\begin{verbatim}
-for(i = 0; i < 10; i++)
+\begin{minipage}[t]{0.5\textwidth}
+\begin{nllisting}
+for(i = 0; i < 6; i++)
     print(i + 1)
-\end{verbatim}
+\end{nllisting}
 \end{minipage}
-\vline\hfill
-\begin{minipage}{0.45\textwidth}
-\texttt{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+\begin{minipage}[t]{0.5\textwidth}
+\begin{bklisting}
+1
+2
+3
+4
+5
+6
+\end{bklisting}
 \end{minipage}
 
 \paragraph{Aantal stappen}

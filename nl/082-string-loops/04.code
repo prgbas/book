@@ -1,4 +1,0 @@
-s = "Hello, world!"
-l = length(s)
-for(i = 0; i < l; i = i + 1)
-   print(s[i])

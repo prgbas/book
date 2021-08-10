@@ -15,12 +15,12 @@ We start the program on line 1 with the value \texttt{a = 0}. This means that on
 
 Like in the previous chapter we can trace the state of the variables. A trace for the previous code fragment looks like this:
 
-\begin{tracelist}[lcccc]
-  & 1 & \texttt{2} & \texttt{3} & \texttt{4} \\
+\begin{tracelist-left}[lcccc]
+line  & 1 & \texttt{2} & \texttt{3} & \texttt{4} \\
 \hline
 \\[-1em]
 a & \fbox{0} & 0 & \fbox{10} & \fbox{9}
-\end{tracelist}
+\end{tracelist-left}
 
 In the top row we print the program's line numbers. In the row below, we keep track of the variable \texttt{a}. In exactly three places, the value of \texttt{a} has a box: these are the lines where the value of the variable changed while tracing.
 
@@ -37,8 +37,7 @@ a = a - 1
 
 And we skip line 3 in the trace:
 
-\begin{tracelist}[lccccccc]
-  & \texttt{1} & \texttt{2} &  \texttt{4} \\ \hline
-\\[-1em]
+\begin{tracelist-left}[l|ccccccc]
+line & \texttt{1} & \texttt{2} &  \texttt{4} \\ \hline
 \texttt{a} & \fbox{\texttt{0}} & \texttt{0} & \fbox{\texttt{-1}}
-\end{tracelist}
+\end{tracelist-left}

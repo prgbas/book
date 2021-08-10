@@ -1,6 +1,0 @@
-void bar():
-   print("bicycle")
-void baz():
-   print("jump")
-   bar()
-baz()

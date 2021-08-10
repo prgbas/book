@@ -1,3 +1,0 @@
-void dal(y):
-   print(y)
-dal("jump")

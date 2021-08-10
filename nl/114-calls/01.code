@@ -1,9 +1,0 @@
-int gus(z, y)
-   return dim(z, y) / 2
-int yap(z, x)
-   return gus(x, z) - 3
-int dim(y, x)
-   return x + 4
-x = 6
-y = 4
-print(yap(x, y))

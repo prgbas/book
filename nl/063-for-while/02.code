@@ -1,2 +1,0 @@
-for(e = 0; e < 4; e = e + 1)
-   print(e)

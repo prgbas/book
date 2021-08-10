@@ -1,4 +1,0 @@
-lap = ['a', 'b', 'c', 'd', 'e']
-l = length(lap)
-for(i = l - 1; i >= 0; i = i - 1)
-   lap[i] = 'x'

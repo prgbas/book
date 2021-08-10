@@ -1,4 +1,0 @@
-gop = [4, 2, 5, 1, 8]
-l = length(gop)
-for(i = 0; i < l - 1; i = i + 1)
-   gop[i] = gop[i + 1]

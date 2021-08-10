@@ -1,6 +1,0 @@
-ufo = "fly"
-void foo():
-   print(ufo)
-foo()
-ufo = "by"
-foo()

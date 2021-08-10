@@ -1,3 +1,0 @@
-void eid(x, y, z):
-   print(z / x)
-eid(10, 11, 12)

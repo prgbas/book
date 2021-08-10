@@ -1,3 +1,0 @@
-void ash(y, x, z):
-   print(x / z)
-ash(12, 11, 10)

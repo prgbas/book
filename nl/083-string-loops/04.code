@@ -1,7 +1,0 @@
-s1 = "ab"
-s2 = "123"
-j = 1
-for(i = 0; i < 2; i = i + 1)
-   print(s1[i])
-   print(s2[j])
-   j = j + 1

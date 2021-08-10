@@ -1,3 +1,0 @@
-void zek(x, z):
-   print(x / z)
-zek(12, 10)

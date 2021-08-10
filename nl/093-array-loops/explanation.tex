@@ -2,10 +2,10 @@
 
 In de praktijk komen arrays veel voor in combinatie met loops.
 
-\begin{verbatim}
-1 eus = [0, 0, 0, 0]
-2 for(i = 0; i < length(eus); i++)
-3     eus[i] = i * 2
-\end{verbatim}
+\begin{nnflisting}
+eus = [0, 0, 0, 0]
+for(i = 0; i < length(eus); i++)
+    eus[i] = i * 2
+\end{nnflisting}
 
 Na het uitvoeren van dit codefragment bevat array \texttt{eus} de waardes \texttt{0}, \texttt{2}, \texttt{4} en \texttt{6}. Deze code maakt gebruik van het commando \texttt{length()} om de lengte van de array te bepalen. Let erop dat niet alle programmeertalen zo'n commando hebben (bijvoorbeeld de programmeertaal C). In zulke gevallen zal je als programmeur zelf de lengte van een array moeten bijhouden.
